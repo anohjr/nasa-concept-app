@@ -1,4 +1,5 @@
 import LogoNasa from "../components/NASA_logo";
+import NavBar from "../components/nav_bar";
 
 function Iss() {
   return (
@@ -13,6 +14,7 @@ function Iss() {
           </p>
         </div>
       </div>
+      <NavBar />
     </div>
   );
 }
