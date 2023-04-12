@@ -83,11 +83,8 @@ body {
   width: 25%;
 }
 
-.losange_vector{
-  width: 1.7vh;
-  height: 1.7vh;
-  border: 0.7px solid white;
-  transform: rotate(45deg);
+.diamond_svg{
+  height: 35%;
 }
 
 .nav_title{
