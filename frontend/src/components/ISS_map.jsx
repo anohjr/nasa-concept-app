@@ -1,7 +1,11 @@
-export default function mapComponent() {
+import worldMap from "../assets/world-map.png";
+
+function MapComponent() {
   return (
-    <div className="map_box">
-      <img src="./assets/world-map.png" alt="world-map for ISS Tracker" />
+    <div id="map_container">
+      <img id="map_img" src={worldMap} alt="world-map for ISS Tracker" />
     </div>
   );
 }
+
+export default MapComponent;

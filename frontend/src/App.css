@@ -102,6 +102,22 @@ body {
 
 /*  --->  NAVBAR COMPONENT : END  */
 
+/*  --->  MAP COMPONENT */
+
+#map_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 80%;
+}
+
+#map_img{
+ width: 80%;
+}
+
+
 /*  ---> ISS PAGE */
 
 #issBackground {
