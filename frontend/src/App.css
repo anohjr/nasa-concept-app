@@ -71,6 +71,7 @@ body {
 
 #ISS_title_container{
   height: auto;
+  width: 40%;
 }
 
 #ISS_title{
@@ -85,6 +86,7 @@ body {
   font-family: Karla;
   font-size: medium;
   font-weight: 200;
+  text-align: end;
   opacity: 0.7;
   color: white;
   margin: 0;
