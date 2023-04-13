@@ -1,0 +1,31 @@
+.home {
+  height: 100%;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+img {
+  width: 100px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+
+}
+
+#nasaLogo {
+  margin-left: 2rem;
+}
+
+#header button {
+  margin-right: 2rem;
+  height: min-content;
+}
+
+#closeButton {
+  margin-right: 2rem;
+  width: 3rem;
+  height: 3rem;
+}
