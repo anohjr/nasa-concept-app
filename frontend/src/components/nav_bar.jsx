@@ -21,7 +21,13 @@ function NavBar() {
           <h4 className="nav_title">ISS Tracker</h4>
         </div>
       </div>
-      <div id="progression_bar" />
+      <div id="bar_container">
+        <div id="topics_bar" className="section_bar" />
+        <div id="gallery_bar" className="section_bar" />
+        <div id="solar_bar" className="section_bar" />
+        <div id="ISS_bar" className="section_bar" />
+        <div id="progression_bar" />
+      </div>
     </div>
   );
 }

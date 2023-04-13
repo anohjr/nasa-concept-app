@@ -92,6 +92,33 @@ body {
   font-size: larger;
 }
 
+.section_bar{
+  position: absolute;
+  width: 25%;
+  height: 0px;
+}
+
+#topics_bar{
+  left: 0;
+  border: 1.5px solid blue;
+}
+
+#gallery_bar{
+  left: 25%;
+  border: 1.5px solid white;
+}
+
+#solar_bar{
+  left: 50%;
+  border: 1.5px solid blue;
+}
+
+#ISS_bar{
+  left: 75%;
+  border: 1.5px solid white;
+}
+
+
 #progression_bar{
   width: auto;
   height: 0px;
