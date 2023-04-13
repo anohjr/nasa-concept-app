@@ -1,6 +1,6 @@
 import LogoNasa from "../components/NASA_logo";
 import NavBar from "../components/nav_bar";
-import MapComponent from "../components/ISS_map";
+import worldMap from "../assets/world.svg";
 
 function Iss() {
   return (
@@ -15,7 +15,7 @@ function Iss() {
           </p>
         </div>
       </div>
-      <MapComponent />
+      <img id="map_img" src={worldMap} alt="world-map for ISS Tracker" />;
       <NavBar />
     </div>
   );

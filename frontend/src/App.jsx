@@ -1,5 +1,6 @@
 // import { useState } from "react";
 // import Home from "./pages/Home";
+// import SolarSystem from "./pages/SolarSystem";
 import Iss from "./pages/ISS";
 
 import "./App.css";

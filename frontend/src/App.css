@@ -129,21 +129,25 @@ body {
 
 /*  --->  NAVBAR COMPONENT : END  */
 
-/*  --->  MAP COMPONENT */
+/*  --->  SOLAR SYSTEM PAGE */
 
-#map_container{
-  display: flex;
-  justify-content: center;
-  margin-top: 3%;
-  margin-right: 10%;
-  margin-left: 10%;
-  width: 80%;
+#solar_system_background{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/solar-system-wallpaper.jpg);
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
 
-#map_img{
- width: 80%;
+#solar_system_svg{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 20%;
 }
-
 
 /*  ---> ISS PAGE */
 
@@ -156,6 +160,15 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100%;
+}
+
+#map_img{
+  position: absolute;
+  width: 70%;
+  height: auto;
+  left: 15%;
+  right: 15%;
+  top: 20%;
 }
 
 #header_container{
@@ -191,4 +204,5 @@ body {
 }
 
 /*  --->  ISS PAGE : END  */
+
 
