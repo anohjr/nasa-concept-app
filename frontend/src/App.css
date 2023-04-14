@@ -163,7 +163,7 @@ body {
 }
 
 #map_container{
-  position: absolute©;
+  position: absolute;
   width: 70%;
   left: 15%;
   right: 15%;
@@ -171,13 +171,17 @@ body {
 }
 
 #map_img{
+  position: relative;
   width: 100%;
 }
 
 #iss_logo{
-  width: 20%;
-  height: 20%;
-  top:30%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 15%;
+  height: 15%;
+  
 
 }
 

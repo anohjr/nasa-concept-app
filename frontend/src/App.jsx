@@ -2,7 +2,6 @@
 // import Home from "./pages/Home";
 // import SolarSystem from "./pages/SolarSystem";
 import Iss from "./pages/ISS";
-
 import "./App.css";
 
 function App() {
