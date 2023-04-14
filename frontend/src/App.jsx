@@ -1,5 +1,5 @@
 import "./App.css";
-import Gallery from "./pages/Gallery-wrapper";
+import Gallery from "./pages/Gallery";
 
 function App() {
   function handleOpenClick() {
