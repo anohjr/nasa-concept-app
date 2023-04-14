@@ -1,13 +1,14 @@
 import GalleryHeader from "../components/GalleryHeader";
 import "./Gallery-wrapper.css";
+import SearchBar from "../components/GallerySearchBar";
 
-function GalleryWrapper() {
-  console.info("1", document.getElementsByClassName("home")[0]);
+function Gallery() {
   return (
     <div className="home" id="home">
       <GalleryHeader />
+      <SearchBar />
     </div>
   );
 }
 
-export default GalleryWrapper;
+export default Gallery;
