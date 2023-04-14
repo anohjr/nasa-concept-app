@@ -1,10 +1,14 @@
-// import logoNasa from "../assets/logo.svg";
-export default function Home() {
+// import react from "react";
+import backgroundImage from "../assets/homeWallpaper.jpg";
+import NavBar from "../components/Navbar";
+
+function App() {
   return (
-    <body>
-      <header className="App-header">
-        <p>Hello </p>
-      </header>
-    </body>
+    <div className="App">
+      <img src={backgroundImage} alt="Space view" />
+      <NavBar />
+    </div>
   );
 }
+
+export default App;

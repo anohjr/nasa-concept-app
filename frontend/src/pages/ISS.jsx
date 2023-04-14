@@ -1,5 +1,5 @@
 import LogoNasa from "../components/NASA_logo";
-import NavBar from "../components/nav_bar";
+import NavBar from "../components/Navbar";
 import MapComponent from "../components/ISS_map";
 
 function Iss() {
