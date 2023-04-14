@@ -1,5 +1,4 @@
 import nasaLogo from "../assets/nasa-logo.png";
-
 import closeBttn from "../assets/close-button.png";
 
 function GalleryHeader() {
@@ -10,6 +9,7 @@ function GalleryHeader() {
   document
     .getElementById("closeButton")
     .addEventListener("click", closeGallery);
+
   return (
     <div id="header">
       <img src={nasaLogo} alt="LOGO NASA" id="nasaLogo" />
