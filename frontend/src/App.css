@@ -192,3 +192,34 @@ body {
 
 /*  --->  ISS PAGE : END  */
 
+/*  --->  SIDEBAR HOME PAGE   */
+
+#scrollbox-inner::-webkit-scrollbar{
+  width: 5px;
+} 
+
+#scrollbox-inner::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 15px;
+} 
+#scrollbox-inner{
+  width: 50vh;
+  height: 50vh;
+  background-color: gold;
+  position: absolute;
+  top:0;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  padding: 20px 10px 0 20px;
+  margin-top: 5vh;
+  margin-right: 10vh;
+}
+
+ #scrollbox{
+  display: flex;
+  justify-content: flex-end;
+  
+
+} 
+

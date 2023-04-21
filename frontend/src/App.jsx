@@ -2,8 +2,8 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Iss from "./pages/ISS";
-
 import "./App.css";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   // const [page, setPage] = useState(1);
@@ -11,8 +11,10 @@ function App() {
     <div className="App">
       <Home />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ISS" element={<Iss />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/iss" element={<Iss />} />
+        <Route path="/solar-system" element={<Iss />} />
+        <Route path="/gallery" element={<Home />} />
       </Routes>
     </div>
   );
