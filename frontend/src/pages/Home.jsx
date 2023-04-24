@@ -1,21 +1,20 @@
 // import react from "react";
-import backgroundImage from "../assets/homeWallpaper.jpg";
 import NavBar from "../components/Navbar";
-import ImgHome from "../components/Image_home";
 import Sidebar from "../components/Sidebar";
+import LogoNasa from "../components/NASA_logo";
+import Button from "../components/Button_iotd";
 
-function App() {
+function Home() {
   return (
-    <div className="position_background">
+    <div id="position_background">
       <div id="Background">
-        <img src={backgroundImage} alt="Space view" />
         <NavBar />
-        {/* <ImgHome /> */}
-        {/* <ImgHome /> */}
         <Sidebar />
+        <LogoNasa />
+        <Button />
       </div>
     </div>
   );
 }
 
-export default App;
+export default Home;
