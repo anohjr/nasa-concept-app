@@ -1,19 +1,12 @@
-import LogoNasa from "../components/NASA_logo";
-import NavBar from "../components/nav_bar";
-import solarSystemSVG from "../assets/solar-system.svg";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+import SolarSystemSVG from "../components/SolarSystemSVG";
 
-function SolarSystem() {
+function SolarSystem(props) {
   return (
-    <div id="solar_system_background">
-      <div id="header_container">
-        <LogoNasa />
-      </div>
-      <img
-        id="solar_system_svg"
-        src={solarSystemSVG}
-        alt="dynamic solar system"
-      />
-      <NavBar />
+    <div id="solar_system_page">
+      <div id="header_container" />
+      <SolarSystemSVG displayGallery={props.displayGallery} />
     </div>
   );
 }
