@@ -7,13 +7,23 @@
 
 #header {
   display: flex;
-  justify-content: space-between;
-  padding-top: 4rem;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
-.nasaLogo {
-  margin-left: 2rem;
-  width: 100px;
+#header h1  {
+  width: 90%;
+  height: min-content;
+  text-align: center;
 }
 
 #header button {
@@ -24,17 +34,49 @@
 #closeButton {
   background-color: transparent;
   border: none;
+  
   }
 #closeButton img{
   height: 3rem;
   width: 3rem;
 }
 
+#header .searchBar {
+  width: 50%;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #searchBar {
   margin: auto;
-  margin-bottom: 5rem;
-  width: 50%;  
+   width: 50%; 
+   margin-bottom: 1rem;
+   background-color: rgba(255, 255, 255, 0.3);
+   color: aliceblue;
+   border: none;
+   border-radius: 10px;
+   font-size: medium;
+   padding-left: 1rem;
 }
+
+.searchBar #filters {
+  width: 50%;
+  margin: auto;
+}
+#filters button {
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  font-size: medium;
+
+}
+
 
 /* GALLERY IMAGES */
 
