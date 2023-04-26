@@ -287,7 +287,7 @@ cursor: pointer;
 /*  ---> ISS PAGE */
 
 #issBackground {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg);
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg); */
   background-attachment: fixed;
   position: absolute;
   top: 0;
@@ -306,9 +306,19 @@ cursor: pointer;
   transition: 350ms;
 }
 
-#map_img{
-  position: relative;
+#map{
+  position: absolute;
   width: 100%;
+  top: 0;
+  bottom: 0;
+  
+}
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-left {
+  display: none;
 }
 
 #iss_logo{
