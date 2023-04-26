@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import ImgHome from "./Image_home";
+import Articles from "./Articles_home";
 
 function Sidebar() {
   return (
@@ -10,18 +10,7 @@ function Sidebar() {
         <p>date du jour</p>
         <p>WOUALLLLLEZZZZZZZZZZZ</p>
         <div id="scrollbox-inner">
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
-          <ImgHome />
+          <Articles />
         </div>
       </div>
     </div>

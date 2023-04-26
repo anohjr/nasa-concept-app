@@ -207,9 +207,9 @@ body {
   border-radius: 15px;
 } 
 #scrollbox-inner{
-  width: 30vh;
+  width: 30vh; 
   height: 50vh;
-  background-color: gold;
+  /* background-color: gold; */
   color: white;
   display: flex;
   align-items: flex-start;
@@ -236,7 +236,7 @@ body {
 }
 
 #sidebar-title{
-  background-color: blue;
+  /* background-color: blue; */
   padding-bottom: 3vh;
   text-align: end;
   color: white;
@@ -249,8 +249,15 @@ body {
   margin-right: 10vh;
 }
 
+
+
 #article-content{
   background-color: #33373E;
+}
+
+.articles_css{
+  width: 100%;
+
 }
 
 /*  --->  SIDEBAR HOME PAGE - END   */

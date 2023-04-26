@@ -1,4 +1,3 @@
-// import react from "react";
 import NavBar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import LogoNasa from "../components/NASA_logo";
