@@ -1,56 +1,373 @@
+@font-face {
+  font-family: Karla;
+  src: url(../src/fonts/karla/Karla[wght].ttf);
+}
+
 body {
+  font-family: Karla;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1{
+  font-family: Karla;
+  font-weight: lighter;
+  color: white;
+  margin: 0;
 }
 
-.App {
-  text-align: center;
+#app_overflow{
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*  --> PAGES ANIMATIONS */
+
+.page-enter {
+  transform: scale(1.07);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page-enter-active {
+  transform: scale(1);
+  transition: transform 350ms;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  --->  NASA LOGO COMPONENT  */
+
+#nasa_logo_container{
+  z-index: 2;
+  position: absolute;
+  top: 2.5%;
+  margin-left: 6%;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 3%;
+  height: 10%;
+  min-height: 60px;
+  width: 25%;
+}
+
+#logo_img{
+  height: 70%;
+}
+
+#logo_text_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#nasa_title{
+  font-weight: 200;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 10rem;
+  margin: 0;
+}
+
+#nasa_text{
+  font-weight: 200;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin: 0;
+  opacity: 0.7;
+  line-height: 18px; 
+}
+
+/*  ---> NASA LOGO COMPONENT : END  */
+
+/*  --->  NAV_BAR COMPONENT */
+
+#navbar_container{
+  z-index: 3;
+  position: absolute;
+  bottom: -20%;
+  margin-bottom: 3%;
+  right: 10%;
+  left: 10%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  transition: 450ms;
+}
+
+#navtitle_container{
+  display: flex;
+  flex-direction: row;
+}
+
+.section_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 25%;
+}
+
+.diamond_svg{
+  height: 25%;
+}
+
+.nav_title{
+  font-weight: 200;
+  font-size: larger;
+  cursor: pointer;
+}
+
+#dynamic_bar{
+  position: absolute;
+  width: 25%;
+  height: 0px;
+  left: 0;
+  border: 1.5px solid white;
+  opacity: 1;
+  transition-duration: 700ms;
+}
+
+#progression_bar{
+  width: auto;
+  height: 0px;
+  border: 1.5px solid white;
+  opacity: 0.2;
+
+}
+
+/*  --->  NAVBAR COMPONENT : END  */
+
+/*  --> HOME PAGE */
+
+#Home_Page{
+  background: linear-gradient(0deg, rgba(0, 37, 132, 0.05), rgba(0, 37, 132, 0.05)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(./assets/home-wallpaper.jpg);
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+/*  --> GALLERY PAGE  */
+
+#Gallery_popup{
+  overflow: scroll;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  transition-duration: 700ms;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))
+}
+
+#close_button{
+  position: absolute;
+  height: 5%;
+  right: 0;
+  margin-right: 6%;
+  top: 5%;
+  cursor: pointer;
+}
+
+#close_button path{
+  transition-duration: 200ms;
+}
+
+#close_button:hover circle{
+  stroke: black;
+  fill: white;
+}
+
+#close_button:hover path{
+  fill: black;
+  stroke: black;
+}
+
+#Gscroll_container{
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  position: absolute;
+  left: 22%;
+  width: 56%;
+  height: auto;
+}
+
+#scroll_header{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 2%;
+  height: 200px;
+  width: 100%;
+}
+
+#search_bar{
+  width: 45%;
+  height: 12.5%;
+  margin-top: 5%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#Sfilters_container{
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  width: 45%;
+  height: 12.5%;
+}
+
+.search_filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Karla;
+  font-weight: lighter;
+  width: auto;
+  padding-right: 4%;
+  padding-left: 4%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search_filter:hover{
   color: white;
+  opacity: 0.6;
+  transition-duration: 300ms;
+  scale: 1.01;
 }
 
-.App-link {
-  color: #61dafb;
+#feed_container{
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.imgSquare{
+width: 32%;
+min-width: 250px;
+height: auto;
+padding: 5px;
+cursor: pointer;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+/*  --->  SOLAR SYSTEM PAGE */
+
+#solar_system_page{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/solar-system-wallpaper.jpg);
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
 }
+
+#solar_system_svg{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  left: 20%;
+  transition: 350ms;
+}
+
+/*  ---> ISS PAGE */
+
+#issBackground {
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg); */
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#map_container{
+  position: absolute;
+  width: 70%;
+  left: 15%;
+  right: 15%;
+  top: 20%;
+  transition: 350ms;
+}
+
+#map{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  
+}
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+
+#iss_logo{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  height: 15%;
+}
+
+#header_container{
+  margin-top: 3%;
+  margin-left: 6%;
+  margin-right: 6%;
+  display: flex;
+  justify-content: flex-end;
+  height: 10%;
+}
+
+#ISS_title_container{
+  /*top: 3.5%;*/
+  right: 0;
+  margin-right: 6%;
+  position: absolute;
+  z-index: 1;
+  height: 10%;
+  width: 40%;
+  transition: 350ms;
+  transition-delay: 350ms;
+}
+
+#ISS_title_text{
+  font-family: Karla;
+  font-size: medium;
+  font-weight: 200;
+  text-align: end;
+  opacity: 0.7;
+  color: white;
+  margin: 0;
+}
+
+/*  --->  ISS PAGE : END  */
+
+/*  ---> IMAGE OF THE DAY - POPUP */
+
+#Imageotd_popup{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
