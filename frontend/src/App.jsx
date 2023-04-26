@@ -24,11 +24,8 @@ function App() {
   return (
     <>
       <div id="app_overflow">
-        {displayGallery ? (
-          <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
-        ) : (
-          ""
-        )}
+        <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+
         <NavBar
           loadPage={setPage}
           currentPage={page}

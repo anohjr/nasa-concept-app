@@ -4,7 +4,7 @@ import "./Gallery.css";
 import GalleryBody from "../components/GalleryBody";
 
 // eslint-disable-next-line react/prop-types
-function Gallery({ setDisplay }) {
+function Gallery({ setDisplay, display }) {
   const [myData, setMyData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("earth");
 
@@ -26,7 +26,7 @@ function Gallery({ setDisplay }) {
   // console.info(myData);
 
   return (
-    <div className="gallery" id="home">
+    <div className="gallery" id="home" style={{ top: display ? "0" : "100%" }}>
       <GalleryHeader
         setGalleryVisible={setDisplay}
         setSearchQuery={setSearchQuery}
