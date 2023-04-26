@@ -6,7 +6,7 @@ import { CSSTransition, SwitchTransition } from "react-transition-group";
 // --> Components
 import NavBar from "./components/nav_bar";
 import LogoNasa from "./components/logoNASA";
-import Gallery from "./components/Gallery";
+import Gallery from "./pages/Gallery";
 import IssTitle from "./components/IssTitle";
 // --> PAGES
 import Home from "./pages/Home";
@@ -24,7 +24,11 @@ function App() {
   return (
     <>
       <div id="app_overflow">
-        <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+        {displayGallery ? (
+          <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+        ) : (
+          ""
+        )}
         <NavBar
           loadPage={setPage}
           currentPage={page}
