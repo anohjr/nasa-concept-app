@@ -3,10 +3,19 @@
 
 import nasaLogo from "../assets/nasa-logo.png";
 // eslint-disable-next-line react/prop-types
-export default function ImageSwiper({ image, setVisible, setImage, myData }) {
+export default function ImageSwiper({
+  image,
+  setVisible,
+  setImage,
+  myData,
+  setPageNum,
+}) {
   const indexOfImage = myData.findIndex((element) => element === image);
   console.info(image);
   function handleNextClick() {
+    if (indexOfImage === myData.length - 2) {
+      setPageNum((prevState) => prevState + 1);
+    }
     console.info(image);
     setImage(myData[indexOfImage + 1]);
   }
@@ -42,11 +51,7 @@ export default function ImageSwiper({ image, setVisible, setImage, myData }) {
           )}
         </div>
 
-        <button
-          onClick={handleNextClick}
-          type="button"
-          disabled={indexOfImage === myData.length - 1}
-        >
+        <button onClick={handleNextClick} type="button">
           Suivant
         </button>
       </div>

@@ -5,24 +5,24 @@ import GalleryBody from "../components/GalleryBody";
 
 // eslint-disable-next-line react/prop-types
 function Gallery({ setGalleryVisible }) {
-  const [myData, setMyData] = useState();
+  const [myData, setMyData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("earth");
-  // eslint-disable-next-line no-unused-vars
-  const [pageSize, setPageSize] = useState(12);
+
+  const [pageNum, setPageNum] = useState(1);
 
   useEffect(() => {
     fetch(
-      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=${pageSize}`
+      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=30&page=${pageNum}`
     )
       .then((response) => response.json())
       .then((data) => {
         console.info(data.collection.items);
-        setMyData(data.collection.items);
+        setMyData((prevState) => [...prevState, ...data.collection.items]);
       })
       .catch((error) => console.error(error));
 
     // setMyData(search.collection.items);
-  }, [searchQuery]);
+  }, [searchQuery, pageNum]);
   // console.info(myData);
 
   return (
@@ -31,8 +31,10 @@ function Gallery({ setGalleryVisible }) {
         setGalleryVisible={setGalleryVisible}
         setSearchQuery={setSearchQuery}
         searchQuery={searchQuery}
+        setPageNum={setPageNum}
+        setMyData={setMyData}
       />
-      {myData ? <GalleryBody data={myData} /> : ""}
+      {myData ? <GalleryBody data={myData} setPageNum={setPageNum} /> : ""}
     </div>
   );
 }

@@ -10,16 +10,10 @@ import ImageGrid from "./ImageGrid";
 // https://images-api.nasa.gov/media_type?=image
 // https://api.nasa.gov/planetary/apod?api_key=GmJrWvexeBC4z79UNrwhWg6RCtDfQFq5DCP5qiBh
 
-function GalleryBody({ data }) {
-  // const [myData, setMyData] = useState([]);
+function GalleryBody({ data, setPageSize, setPageNum }) {
   const [visible, setVisible] = useState(false);
   const [image, setImage] = useState("");
-  // const [myData, setMyData] = useState({});
-  // const [searchQuery, setSearchQuery] = useState("");
-
-  // const apiKey = "GmJrWvexeBC4z79UNrwhWg6RCtDfQFq5DCP5qiBh";
-
-  // q=${searchQuery}&
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   return (
     <div>
@@ -29,12 +23,19 @@ function GalleryBody({ data }) {
           image={image}
           setImage={setImage}
           setVisible={setVisible}
+          setPageSize={setPageSize}
+          setPageNum={setPageNum}
         />
       ) : (
         <ImageGrid
           myData={data}
           setVisible={setVisible}
+          visible={visible}
           setImage={setImage}
+          setPageSize={setPageSize}
+          setPageNum={setPageNum}
+          setScrollPosition={setScrollPosition}
+          scrollPosition={scrollPosition}
 
           // setSearchQuery={setSearchQuery}
         />
