@@ -1,22 +1,42 @@
+/* eslint-disable react/prop-types */
 import nasaLogo from "../assets/nasa-logo.png";
+import closeBttn from "../assets/close-button.png";
 
-// import closeBttn from "../assets/close-button.png";
-
-function GalleryHeader() {
-  function closeGallery() {
-    document.getElementsByClassName("home")[0].style.display = "none";
-
-    document.getElementById("open").style.display = "initial";
+function GalleryHeader({
+  setGalleryVisible,
+  searchQuery,
+  setSearchQuery,
+  setPageNum,
+  setMyData,
+}) {
+  function handleChange(e) {
+    setSearchQuery(e.target.value);
+    setMyData([]);
+    setPageNum(1);
   }
-  document
-    .getElementById("closeButton")
-    .addEventListener("click", closeGallery);
+
+  function closeGallery() {
+    setGalleryVisible(false);
+  }
+
   return (
     <div id="header">
-      <img src={nasaLogo} alt="LOGO NASA" id="nasaLogo" />
+      <img src={nasaLogo} alt="LOGO NASA" className="nasaLogo" />
       <h1>Image Gallery</h1>
-
-      {/* <img src={closeBttn} alt="" id="closeButton" /> */}
+      <input
+        placeholder="Search here"
+        type="text"
+        name=""
+        id="searchBar"
+        value={searchQuery}
+        onChange={(e) => handleChange(e)}
+      />
+      <button type="button" id="closeButton" onClick={closeGallery}>
+        <img src={closeBttn} alt="" />
+      </button>
+      <button type="button" onClick={() => setSearchQuery("Mars")}>
+        Mars
+      </button>
     </div>
   );
 }
