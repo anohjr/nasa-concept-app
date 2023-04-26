@@ -1,17 +1,25 @@
+import { useState } from "react";
 import "./App.css";
 import Gallery from "./pages/Gallery";
 
 function App() {
+  const [galleryVisible, setGalleryVisible] = useState(false);
+
   function handleOpenClick() {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("open").style.display = "none";
+    setGalleryVisible(true);
   }
   return (
     <div className="App">
-      <Gallery />
-      <button id="open" type="button" onClick={handleOpenClick}>
-        Open
-      </button>
+      {galleryVisible ? (
+        <Gallery
+          setGalleryVisible={setGalleryVisible}
+          galleryVisible={galleryVisible}
+        />
+      ) : (
+        <button id="open" type="button" onClick={handleOpenClick}>
+          Open
+        </button>
+      )}
     </div>
   );
 }
