@@ -23,7 +23,7 @@ export default function ImageGrid({
     setScrollPosition(listInnerRef.current.scrollTop);
     if (listInnerRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = listInnerRef.current;
-      if (scrollTop + clientHeight >= scrollHeight - 100) {
+      if (scrollTop + clientHeight >= scrollHeight - 50) {
         setPageNum((prevState) => prevState + 1);
       }
     }

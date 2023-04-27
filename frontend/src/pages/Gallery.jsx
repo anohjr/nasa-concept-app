@@ -12,7 +12,7 @@ function Gallery({ setDisplay, display }) {
 
   useEffect(() => {
     fetch(
-      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=30&page=${pageNum}`
+      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=12&page=${pageNum}`
     )
       .then((response) => response.json())
       .then((data) => {
