@@ -26,6 +26,7 @@
 
 #header h1  {
   width: 90%;
+  padding-left: 5rem;
   height: min-content;
   text-align: center;
 }
@@ -72,7 +73,8 @@
   margin: auto;
 }
 #filters button {
-  width: 20%;
+  width: fit-content;
+  padding: 0 0.5rem 0 0.5rem;
   background-color: rgba(255, 255, 255, 0.3);
   color: aliceblue;
   border: none;
