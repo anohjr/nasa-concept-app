@@ -1,22 +1,17 @@
-import LogoNasa from "../components/NASA_logo";
-import NavBar from "../components/Navbar";
-import MapComponent from "../components/ISS_map";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 
-function Iss() {
+import MapISS from "../components/MapISS";
+
+function Iss(props) {
   return (
     <div id="issBackground">
-      <div id="header_container">
-        <LogoNasa />
-
-        <div id="ISS_title_container">
-          <h1 id="ISS_title">ISS Tracker</h1>
-          <p id="ISS_title_text">
-            Track the location of the International Space Station in real-time
-          </p>
-        </div>
+      <div
+        id="map"
+        style={{ opacity: props.displayGallery === true ? "0" : "1" }}
+      >
+        <MapISS />
       </div>
-      <MapComponent />
-      <NavBar />
     </div>
   );
 }

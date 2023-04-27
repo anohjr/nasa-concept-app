@@ -17,7 +17,7 @@ function Articles() {
 
   return (
     <div>
-      {articles.map((article) => {
+      {articles?.map((article) => {
         const { title, urlToImage, url } = article;
 
         return (
