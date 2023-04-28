@@ -20,10 +20,7 @@ function Gallery({ setDisplay, display }) {
         setMyData((prevState) => [...prevState, ...data.collection.items]);
       })
       .catch((error) => console.error(error));
-
-    // setMyData(search.collection.items);
   }, [searchQuery, pageNum]);
-  // console.info(myData);
 
   return (
     <div className="gallery" id="home" style={{ top: display ? "0" : "100%" }}>
