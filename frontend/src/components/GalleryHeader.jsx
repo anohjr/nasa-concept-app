@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import closeBttn from "../assets/close-button.png";
+import CloseButton from "./CloseButton";
 
 function GalleryHeader({
   setGalleryVisible,
@@ -21,17 +21,11 @@ function GalleryHeader({
     setMyData([]);
   }
 
-  function closeGallery() {
-    setGalleryVisible(false);
-  }
-
   return (
     <div id="header">
       <div className="title">
         <h1>Image Gallery</h1>
-        <button type="button" id="closeButton" onClick={closeGallery}>
-          <img src={closeBttn} alt="" />
-        </button>
+        <CloseButton setGalleryVisible={setGalleryVisible} />
       </div>
 
       <div className="searchBar">

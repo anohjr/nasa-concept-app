@@ -1,12 +1,19 @@
+/* eslint-disable react/prop-types */
 import Sidebar from "../components/Sidebar";
 
 import Button from "../components/ButtonIotd";
 
-function Home() {
+function Home({ displayGallery }) {
   return (
     <div id="Home_Page">
-      <Sidebar />
-      <Button />
+      {!displayGallery ? (
+        <>
+          <Sidebar />
+          <Button />
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

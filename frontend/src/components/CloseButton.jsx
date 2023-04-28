@@ -1,8 +1,13 @@
-function CloseButton(props) {
+/* eslint-disable react/prop-types */
+
+function CloseButton({ setGalleryVisible }) {
+  function closeGallery() {
+    setGalleryVisible(false);
+  }
   return (
     <svg
       // eslint-disable-next-line react/prop-types, react/destructuring-assignment
-      onClick={props.closeGallery}
+      onClick={closeGallery}
       id="close_button"
       viewBox="0 0 61 61"
       fill="none"
