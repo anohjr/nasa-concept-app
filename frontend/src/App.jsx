@@ -2,18 +2,18 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-// import { Transition } from "react-transition-group";
+
 // --> Components
-import NavBar from "./components/nav_bar";
+import NavBar from "./components/NavBar";
 import LogoNasa from "./components/logoNASA";
-import Gallery from "./components/Gallery";
+import Gallery from "./pages/Gallery";
 import IssTitle from "./components/IssTitle";
 // --> PAGES
-import Home from "./pages/Home";
 import SolarSystem from "./pages/SolarSystem";
+
+import Home from "./pages/Home";
 import Iss from "./pages/ISS";
 
-// import ImageOfTheDay from "./pages/ImageOfTheDay";
 import "./App.css";
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
     <>
       <div id="app_overflow">
         <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+
         <NavBar
           loadPage={setPage}
           currentPage={page}

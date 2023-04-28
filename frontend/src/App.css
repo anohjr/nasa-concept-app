@@ -48,6 +48,11 @@ h1{
   height: 10%;
   min-height: 60px;
   width: 25%;
+  position:absolute;
+  top:0;
+  left: 0;
+  margin-top: 1vh;
+  margin-left: 1vh;
 }
 
 #logo_img{
@@ -360,6 +365,88 @@ cursor: pointer;
 }
 
 /*  --->  ISS PAGE : END  */
+
+/*  --->  SIDEBAR HOME PAGE   */
+
+#scrollbox-inner::-webkit-scrollbar{
+  width: 5px;
+} 
+
+#scrollbox-inner::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 15px;
+} 
+#scrollbox-inner{
+  width: 30vh; 
+  height: 50vh;
+  /* background-color: gold; */
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align:left;
+  top:0;
+  overflow: scroll;
+  padding: 20px 10px 0 20px;
+  margin-top:0vh;
+  margin-right: 0vh;
+  padding-bottom: 2vh;
+}
+
+ #scrollbox{
+  display: flex;
+  justify-content: flex-end;
+} 
+
+#article{
+  display:flex;
+  border : 2px solid #4E545D;
+  flex-direction: column;
+}
+
+#sidebar-title{
+  /* background-color: blue; */
+  padding-bottom: 3vh;
+  text-align: end;
+  color: white;
+  top:0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top:4vh;
+  margin-right: 10vh;
+}
+
+
+
+#article-content{
+  background-color: #33373E;
+}
+
+.articles_css{
+  width: 100%;
+
+}
+
+/*  --->  SIDEBAR HOME PAGE - END   */
+
+/*  --->  BUTTON HOME PAGE  */
+
+#Button-home button{
+  display: flex;
+  position: absolute;
+  background-color: red;
+  color: blue;
+}
+
+
+#position_background {
+  background-image: url("./assets/home-wallpaper.jpg");
+  height: 100vh;
+}
+
 
 /*  ---> IMAGE OF THE DAY - POPUP */
 
