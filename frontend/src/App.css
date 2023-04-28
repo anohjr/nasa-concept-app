@@ -162,15 +162,30 @@ h1{
 
 /*  --> GALLERY PAGE  */
 
-#Gallery_popup{
-  overflow: scroll;
+.gallery {
   position: absolute;
-  z-index: 1;
-  height: 100%;
+  top: 100%;
+  display: block;
   width: 100%;
+  height: 100%;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.7);
   transition-duration: 700ms;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8))
 }
+
+
+/* GALLERY HEADER */
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* GALLERY HEADER : CLOSE BUTTON */
 
 #close_button{
   position: absolute;
@@ -194,79 +209,140 @@ h1{
   fill: black;
   stroke: black;
 }
+/* GALLERY HEADER : TITLE */
 
-#Gscroll_container{
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  position: absolute;
-  left: 22%;
-  width: 56%;
-  height: auto;
-}
-
-#scroll_header{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2%;
-  height: 200px;
+#header h1  {
   width: 100%;
+  height: min-content;
+  text-align: center;
 }
 
-#search_bar{
+/* GALLERY HEADER :SEARCH */
+
+#header .searchBar {
+  width: 50%;
+}
+
+#searchBar{
   width: 45%;
-  height: 12.5%;
+  height: 2rem;
   margin-top: 5%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3);  
+   margin-bottom: 1rem;
+   color: aliceblue;
+   border: none;
+   border-radius: 1rem;
+   font-size: medium;
+   font-family: Karla;
+   padding-left: 1rem;
 }
 
-#Sfilters_container{
-  margin-top: 2%;
+.searchBar {
   display: flex;
-  flex-direction: row;
-  gap: 3%;
-  width: 45%;
-  height: 12.5%;
-}
-
-.search_filter{
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: rgba(255, 255, 255, 0.6);
+}
+
+.searchBar #filters {
+  width: 50%;
+  margin: auto;
+}
+#filters button {
   font-family: Karla;
-  font-weight: lighter;
-  width: auto;
-  padding-right: 4%;
-  padding-left: 4%;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+  width: fit-content;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);  
+  border: none;
+  border-radius: 1rem;
+  font-size: medium;    
+  font-weight: 300;
   cursor: pointer;
 }
 
-.search_filter:hover{
-  color: white;
-  opacity: 0.6;
+#filters button:hover {
+  color: rgba(255, 255, 255, 0.8);
+  scale: 1.02;
   transition-duration: 300ms;
-  scale: 1.01;
 }
 
-#feed_container{
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-width: 100%;
+/* GALLERY GRID */
+
+#galleryImages {
+  width: 60vw;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  height: 75vh;
+  overflow: auto;
+
+}
+/* GALLERY GRID : IMAGE PREVIEW  */
+.imagePreviewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+ width: 100%;
 }
 
-.imgSquare{
-width: 32%;
-min-width: 250px;
-height: auto;
-padding: 5px;
-cursor: pointer;
+.imagePreviewContainer img {  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+/* IMAGE SWIPER */
+
+.imageSwiper {
+  position: absolute;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;  
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+
+}
+.imageSwiperHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 10%;
+  margin-top: 2rem;
+}
+
+.imageSwiperHeader button {
+  height: 40px;
+}
+
+.imageSwiperBody{
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.imageDetailBody {
+  width: 60%;  
+}
+
+.imageDetailBody img{
+  object-fit: scale-down;  
+}
+
+.imageDetailBody p {
+  text-align: center;
+}
+
 
 /*  --->  SOLAR SYSTEM PAGE */
 
