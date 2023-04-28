@@ -9,12 +9,15 @@ import LogoNasa from "./components/logoNASA";
 import Gallery from "./pages/Gallery";
 import IssTitle from "./components/IssTitle";
 // --> PAGES
-import Home from "./pages/Home";
 import SolarSystem from "./pages/SolarSystem";
+// import { useState } from "react";
+// import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
 import Iss from "./pages/ISS";
 
 // import ImageOfTheDay from "./pages/ImageOfTheDay";
 import "./App.css";
+// import Sidebar from "./components/Sidebar";
 
 function App() {
   const [page, setPage] = useState("Home");
