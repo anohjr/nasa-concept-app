@@ -173,6 +173,33 @@ h1{
   transition-duration: 700ms;
 }
 
+/* GALLERY : CLOSE BUTTON */
+
+.close_button{
+  position: absolute;
+  width: 3rem;
+  background-color: transparent;
+  border: none;
+  height: 5%;
+  right: 0;
+  margin-right: 6%;
+  top: 5%;
+  cursor: pointer;
+}
+
+.close_button path{
+  transition-duration: 200ms;
+}
+
+.close_button:hover circle{
+  stroke: black;
+  fill: white;
+}
+
+.close_button:hover path{
+  fill: black;
+  stroke: black;
+}
 
 /* GALLERY HEADER */
 
@@ -185,30 +212,7 @@ h1{
   padding-bottom: 2rem;
 }
 
-/* GALLERY HEADER : CLOSE BUTTON */
 
-#close_button{
-  position: absolute;
-  height: 5%;
-  right: 0;
-  margin-right: 6%;
-  top: 5%;
-  cursor: pointer;
-}
-
-#close_button path{
-  transition-duration: 200ms;
-}
-
-#close_button:hover circle{
-  stroke: black;
-  fill: white;
-}
-
-#close_button:hover path{
-  fill: black;
-  stroke: black;
-}
 /* GALLERY HEADER : TITLE */
 
 #header h1  {
@@ -310,29 +314,22 @@ h1{
   z-index: 2;
 
 }
-.imageSwiperHeader {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  height: 10%;
-  margin-top: 2rem;
-}
-
-.imageSwiperHeader button {
-  height: 40px;
-}
 
 .imageSwiperBody{
   width: 80%;
-  height: 90%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  
+  align-items: center;  
 }
 
 .imageDetailBody {
-  width: 60%;  
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  font-family: Karla; 
 }
 
 .imageDetailBody img{
@@ -340,7 +337,8 @@ h1{
 }
 
 .imageDetailBody p {
-  text-align: center;
+  text-align: end;
+  padding-right: 2rem;
 }
 
 
@@ -368,7 +366,7 @@ h1{
 /*  ---> ISS PAGE */
 
 #issBackground {
-  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg); */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg);
   background-attachment: fixed;
   position: absolute;
   top: 0;

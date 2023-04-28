@@ -17,11 +17,16 @@ function GalleryHeader({
     setMyData([]);
     setPageNum(1);
   }
+  function closeGallery() {
+    setGalleryVisible(false);
+  }
 
   return (
     <div id="header">
       <h1>Image Gallery</h1>
-      <CloseButton setGalleryVisible={setGalleryVisible} />
+      <button type="button" onClick={closeGallery} className="close_button">
+        <CloseButton />
+      </button>
 
       <div className="searchBar">
         <input

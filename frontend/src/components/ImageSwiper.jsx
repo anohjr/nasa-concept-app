@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 
-import nasaLogo from "../assets/nasa-logo.png";
+import CloseButton from "./CloseButton";
 // eslint-disable-next-line react/prop-types
 export default function ImageSwiper({
   image,
@@ -24,12 +24,14 @@ export default function ImageSwiper({
   }
   return (
     <div className="imageSwiper">
-      <div className="imageSwiperHeader">
-        <img src={nasaLogo} alt="" className="nasaLogo" />
-        <button type="button" onClick={() => setVisible(false)}>
-          Fermer
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={() => setVisible(false)}
+        className="close_button"
+      >
+        <CloseButton />
+      </button>
+
       <div className="imageSwiperBody">
         <button
           type="button"
