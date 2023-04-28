@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 // --> Components
-import NavBar from "./components/nav_bar";
+import NavBar from "./components/NavBar";
 import LogoNasa from "./components/logoNASA";
 import Gallery from "./components/Gallery";
 import IssTitle from "./components/IssTitle";
