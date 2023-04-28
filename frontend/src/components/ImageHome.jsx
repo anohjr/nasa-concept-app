@@ -2,7 +2,6 @@ import "../App.css";
 import img1 from "../assets/img1.jpg";
 
 function ImgHome() {
-  //   const index = 1;
   return (
     <div id="article">
       <div id="article-photo">
