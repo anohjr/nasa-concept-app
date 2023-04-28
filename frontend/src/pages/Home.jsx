@@ -1,6 +1,6 @@
 import Sidebar from "../components/Sidebar";
 
-import Button from "../components/Button_iotd";
+import Button from "../components/ButtonIotd";
 
 function Home() {
   return (
