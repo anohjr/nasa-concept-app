@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import CloseButton from "./CloseButton";
-import ImageSquareContainer from "./GimageContainer";
 
 function Gallery(props) {
   return (
@@ -14,29 +13,6 @@ function Gallery(props) {
             <div className="search_filter">Most popular</div>
             <div className="search_filter">Earth</div>
           </div>
-        </div>
-        <div id="feed_container">
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
-          <ImageSquareContainer />
         </div>
       </div>
       <CloseButton closeGallery={() => props.setDisplay(false)} />
