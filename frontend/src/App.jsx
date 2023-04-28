@@ -43,7 +43,7 @@ function App() {
             {
               ISS: <Iss displayGallery={displayGallery} />,
               SolarSystem: <SolarSystem displayGallery={displayGallery} />,
-              Home: <Home />,
+              Home: <Home displayGallery={displayGallery} />,
             }[page]
           }
         </CSSTransition>

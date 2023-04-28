@@ -443,6 +443,7 @@ cursor: pointer;
 
 
 #position_background {
+
   background-image: url("./assets/home-wallpaper.jpg");
   height: 100vh;
 }
