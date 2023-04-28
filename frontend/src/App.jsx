@@ -2,7 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
-// import { Transition } from "react-transition-group";
+
 // --> Components
 import NavBar from "./components/nav_bar";
 import LogoNasa from "./components/logoNASA";
@@ -10,14 +10,11 @@ import Gallery from "./components/Gallery";
 import IssTitle from "./components/IssTitle";
 // --> PAGES
 import SolarSystem from "./pages/SolarSystem";
-// import { useState } from "react";
-// import { Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Iss from "./pages/ISS";
 
-// import ImageOfTheDay from "./pages/ImageOfTheDay";
 import "./App.css";
-// import Sidebar from "./components/Sidebar";
 
 function App() {
   const [page, setPage] = useState("Home");
