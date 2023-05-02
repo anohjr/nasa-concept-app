@@ -4,7 +4,7 @@ function CloseButtonIMG(props) {
     <svg
       // eslint-disable-next-line react/prop-types, react/destructuring-assignment
       onClick={props.close}
-      id="close_button"
+      className="close_button"
       viewBox="0 0 61 61"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

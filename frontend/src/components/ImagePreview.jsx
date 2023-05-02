@@ -13,7 +13,7 @@ export default function ImagePreview({ image, setImage, setVisible, scroll }) {
       <img
         src={image.links[0].href}
         key={image.data[0].nasa_id}
-        alt="test"
+        alt={image.data[0].title}
         onClick={(event) => handleClickImage(event.target)}
       />
     </div>

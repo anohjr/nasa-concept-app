@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Sidebar from "../components/Sidebar";
 
 function Home() {
