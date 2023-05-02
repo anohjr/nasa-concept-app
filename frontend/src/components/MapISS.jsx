@@ -43,7 +43,7 @@ function MapISS() {
         throw new Error(err);
       }
     }
-    // map[scrollZoom].enable()
+    map.scrollZoom.enable();
 
     map.on("load", async () => {
       const geojson = await getLocation();
