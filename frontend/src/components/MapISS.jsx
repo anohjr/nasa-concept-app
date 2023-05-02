@@ -3,8 +3,7 @@ import { useEffect } from "react";
 
 function MapISS() {
   useEffect(() => {
-    mapboxgl.accessToken =
-      "pk.eyJ1Ijoic2FzaGlraTA1IiwiYSI6ImNsZ3E4dm1qZTBidjQzaW1za251bng4c3kifQ.B3nqQSIrzlvcopabVV4Icw";
+    mapboxgl.accessToken = import.meta.env.VITE_APP_MAPBOX_TOKEN;
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/sashiki05/clgxpvz1j00do01pg2syidspx",
@@ -44,6 +43,7 @@ function MapISS() {
         throw new Error(err);
       }
     }
+    // map[scrollZoom].enable()
 
     map.on("load", async () => {
       const geojson = await getLocation();
