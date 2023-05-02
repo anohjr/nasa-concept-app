@@ -778,6 +778,16 @@ border: 0.5px solid #FFFFFF;
   }
 }
 
+@keyframes moveneptune{
+  0% { 
+    offset-distance: 50%;
+  }
+  
+  100% { 
+    offset-distance: 150%;
+  }
+}
+
 @media only screen and (min-width: 1300px){
 #motion-container{
   margin-left: 35vh;
@@ -875,7 +885,7 @@ border: 0.5px solid #FFFFFF;
 #motion_neptune{
   offset-path: path("M48.1648 375.303C41.6334 353.447 46.5772 329.58 61.213 305.101C75.8496 280.621 100.157 255.57 132.26 231.388C196.466 183.027 291.772 138.207 402.961 108.414C514.151 78.6207 620.127 69.5073 701.573 78.8412C742.298 83.5083 776.863 92.7846 802.875 106.373C828.887 119.961 846.304 137.836 852.835 159.692C859.367 181.549 854.423 205.415 839.787 229.895C825.15 254.375 800.843 279.426 768.74 303.607C704.534 351.969 609.228 396.789 498.039 426.582C386.849 456.375 280.873 465.488 199.427 456.154C158.702 451.487 124.137 442.211 98.1247 428.622C72.1133 415.035 54.6961 397.16 48.1648 375.303Z");
   background: radial-gradient(50% 50% at 50% 50%, #6F7DFF 82.29%, rgba(166, 60, 0, 0) 100%);
-  animation: move 4950s linear infinite;
+  animation: moveneptune 4950s linear infinite;
 }
 
 /* SOLAR SYSTEM --> TEXT PART */
@@ -888,7 +898,6 @@ border: 0.5px solid #FFFFFF;
   font-size: large;
   line-height: 45px;
   position: absolute;
-  z-index: 1;
   height: 47vh;
   width: auto;
   top: 0;
