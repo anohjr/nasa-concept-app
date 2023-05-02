@@ -1,55 +1,61 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable import/no-extraneous-dependencies */
-import { useState } from "react";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
-// import { Transition } from "react-transition-group";
-// --> Components
-import NavBar from "./components/nav_bar";
-import LogoNasa from "./components/logoNASA";
-import Gallery from "./components/Gallery";
-import IssTitle from "./components/IssTitle";
-// --> PAGES
-import SolarSystem from "./pages/SolarSystem";
+// /* eslint-disable no-restricted-syntax */
+// /* eslint-disable import/no-extraneous-dependencies */
 // import { useState } from "react";
-// import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Iss from "./pages/ISS";
+// import { CSSTransition, SwitchTransition } from "react-transition-group";
+// // import { Transition } from "react-transition-group";
+// // --> Components
+// import NavBar from "./components/nav_bar";
+// import LogoNasa from "./components/logoNASA";
+// import Gallery from "./components/Gallery";
+// import IssTitle from "./components/IssTitle";
+// // --> PAGES
+// import SolarSystem from "./pages/SolarSystem";
+// // import { useState } from "react";
+// // import { Route, Routes } from "react-router-dom";
+// import Home from "./pages/Home";
+// import Iss from "./pages/ISS";
+// // import { Route, Routes } from "react-router-dom";
 
-// import ImageOfTheDay from "./pages/ImageOfTheDay";
-import "./App.css";
-// import Sidebar from "./components/Sidebar";
+// // import ImageOfTheDay from "./pages/ImageOfTheDay";
+// import "./App.css";
+// // import Sidebar from "./components/Sidebar";
 
-function App() {
-  const [page, setPage] = useState("Home");
-  const [displayGallery, setDisplayGallery] = useState(false);
-  console.log(page);
+// function App() {
+//   const [page, setPage] = useState("Home");
+//   const [displayGallery, setDisplayGallery] = useState(false);
+//   console.log(page);
 
-  return (
-    <>
-      <div id="app_overflow">
-        <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
-        <NavBar
-          loadPage={setPage}
-          currentPage={page}
-          setDisplayGallery={setDisplayGallery}
-          display={displayGallery}
-        />
-      </div>
-      <LogoNasa displayGallery={displayGallery} />
-      <IssTitle display={page} />
-      <SwitchTransition>
-        <CSSTransition key={page} timeout={350} classNames="page">
-          {
-            {
-              ISS: <Iss displayGallery={displayGallery} />,
-              SolarSystem: <SolarSystem displayGallery={displayGallery} />,
-              Home: <Home />,
-            }[page]
-          }
-        </CSSTransition>
-      </SwitchTransition>
-    </>
-  );
-}
+//   return (
+//     // <Routes>
+//     //   <Route path="/" element={<Home />} />
+//     //   <Route path="/iss" element={<Iss />} />
+//     //   <Route path="/solar-system" element={<SolarSystem />} />
+//     //   <Route path="/gallery" element={<Gallery />} />
 
-export default App;
+//       // <div id="app_overflow">
+//         <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+//         <NavBar
+//           loadPage={setPage}
+//           currentPage={page}
+//           setDisplayGallery={setDisplayGallery}
+//           display={displayGallery}
+//         />
+//       </div>
+//       <LogoNasa displayGallery={displayGallery} />
+//       <IssTitle display={page} />
+//       <SwitchTransition>
+//         <CSSTransition key={page} timeout={350} classNames="page">
+//           {
+//             {
+//               ISS: <Iss displayGallery={displayGallery} />,
+//               SolarSystem: <SolarSystem displayGallery={displayGallery} />,
+//               Home: <Home />,
+//             }[page]
+//           }
+//         </CSSTransition>
+//       </SwitchTransition>
+//     </Routes>
+//   );
+// }
+
+// export default App;
