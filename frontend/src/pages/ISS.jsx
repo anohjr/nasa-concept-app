@@ -3,12 +3,17 @@
 
 import MapISS from "../components/MapISS";
 
-function Iss() {
+function Iss(props) {
   return (
-    <div id="issBackground">
-      <div id="map">
-        <MapISS />
-      </div>
+    <div
+      id="map"
+      style={
+        props.displayGallery || props.displayImgotd
+          ? { zIndex: "0" }
+          : { zIndex: "1", transitionDelay: "1.5s" }
+      }
+    >
+      <MapISS />
     </div>
   );
 }

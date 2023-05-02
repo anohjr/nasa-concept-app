@@ -39,24 +39,6 @@ function App() {
           setDisplayImgotd={setDisplayImgotd}
           setPopup={setPopup}
         />
-        <ImgOtdButton
-          displayImgotd={displayImgotd}
-          setDisplay={setDisplayImgotd}
-          displayGallery={displayGallery}
-        />
-        <UpDownArrow
-          displayGallery={displayGallery}
-          displayImgotd={displayImgotd}
-        />
-
-        <NavBar
-          loadPage={setPage}
-          currentPage={page}
-          setDisplayGallery={setDisplayGallery}
-          displayGallery={displayGallery}
-          displayImgotd={displayImgotd}
-          currentPopup={popup}
-        />
       </div>
       <LogoNasa
         displayGallery={displayGallery}
@@ -68,11 +50,33 @@ function App() {
         displayGallery={displayGallery}
         displayImgotd={displayImgotd}
       />
+      <ImgOtdButton
+        displayImgotd={displayImgotd}
+        setDisplay={setDisplayImgotd}
+        displayGallery={displayGallery}
+      />
+      <UpDownArrow
+        displayGallery={displayGallery}
+        displayImgotd={displayImgotd}
+      />
+      <NavBar
+        loadPage={setPage}
+        currentPage={page}
+        setDisplayGallery={setDisplayGallery}
+        displayGallery={displayGallery}
+        displayImgotd={displayImgotd}
+        currentPopup={popup}
+      />
       <SwitchTransition>
         <CSSTransition key={page} timeout={350} classNames="page">
           {
             {
-              ISS: <Iss displayGallery={displayGallery} />,
+              ISS: (
+                <Iss
+                  displayGallery={displayGallery}
+                  displayImgotd={displayImgotd}
+                />
+              ),
               SolarSystem: (
                 <SolarSystem
                   displayGallery={displayGallery}
