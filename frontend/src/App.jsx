@@ -63,7 +63,11 @@ function App() {
         displayImgotd={displayImgotd}
         popup={popup}
       />
-      <IssTitle display={page} />
+      <IssTitle
+        display={page}
+        displayGallery={displayGallery}
+        displayImgotd={displayImgotd}
+      />
       <SwitchTransition>
         <CSSTransition key={page} timeout={350} classNames="page">
           {
