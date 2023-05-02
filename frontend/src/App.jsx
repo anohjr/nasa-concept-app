@@ -34,7 +34,7 @@ function App() {
         />
       </div>
       <LogoNasa displayGallery={displayGallery} />
-      <IssTitle display={page} />
+      {!displayGallery ? <IssTitle display={page} /> : ""}
       <SwitchTransition>
         <CSSTransition key={page} timeout={350} classNames="page">
           {
