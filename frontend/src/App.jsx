@@ -19,7 +19,6 @@ import "./App.css";
 function App() {
   const [page, setPage] = useState("Home");
   const [displayGallery, setDisplayGallery] = useState(false);
-  console.log(page);
 
   return (
     <>

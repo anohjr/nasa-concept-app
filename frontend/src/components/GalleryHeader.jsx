@@ -10,7 +10,7 @@ function GalleryHeader({
   setPageNum,
   setMyData,
 }) {
-  const filterText = "Sagittarius";
+  const filterArray = ["Sagittarius", "Earth"];
 
   function handleChange(e) {
     setSearchQuery(e.target.value);
@@ -38,12 +38,16 @@ function GalleryHeader({
           onChange={(e) => handleChange(e)}
         />
         <div id="filters">
-          <FilterButton
-            filterText={filterText}
-            setSearchQuery={setSearchQuery}
-            setMyData={setMyData}
-            setPageNum={setPageNum}
-          />
+          {filterArray.map((e) => {
+            return (
+              <FilterButton
+                filterText={e}
+                setSearchQuery={setSearchQuery}
+                setMyData={setMyData}
+                setPageNum={setPageNum}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

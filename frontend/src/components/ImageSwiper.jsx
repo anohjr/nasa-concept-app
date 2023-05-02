@@ -2,6 +2,8 @@
 /* eslint-disable react/prop-types */
 
 import CloseButton from "./CloseButton";
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 // eslint-disable-next-line react/prop-types
 export default function ImageSwiper({
   image,
@@ -39,7 +41,7 @@ export default function ImageSwiper({
           disabled={indexOfImage < 1}
           id="swiperButtonPrevious"
         >
-          Précédent
+          <LeftArrow />
         </button>
 
         <div className="imageDetailBody">
@@ -63,7 +65,7 @@ export default function ImageSwiper({
           type="button"
           id="swiperButtonNext"
         >
-          Suivant
+          <RightArrow />
         </button>
       </div>
     </div>

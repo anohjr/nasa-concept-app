@@ -3,12 +3,12 @@
 
 import MapISS from "../components/MapISS";
 
-function Iss(props) {
+function Iss() {
   return (
     <div id="issBackground">
       <div
         id="map"
-        style={{ opacity: props.displayGallery === true ? "0" : "1" }}
+        // style={{ opacity: props.displayGallery === true ? "0" : "1" }}
       >
         <MapISS />
       </div>
