@@ -5,15 +5,17 @@ import MapISS from "../components/MapISS";
 
 function Iss(props) {
   return (
-    <div
-      id="map"
-      style={
-        props.displayGallery || props.displayImgotd
-          ? { zIndex: "0" }
-          : { zIndex: "1", transitionDelay: "1.5s" }
-      }
-    >
-      <MapISS />
+    <div id="ISS_container_for_transition">
+      <div
+        id="map"
+        style={
+          props.displayGallery || props.displayImgotd
+            ? { zIndex: "0", opacity: "0.5" }
+            : { zIndex: "1", transitionDelay: "1s", opacity: "1" }
+        }
+      >
+        <MapISS />
+      </div>
     </div>
   );
 }

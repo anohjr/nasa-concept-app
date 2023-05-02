@@ -419,6 +419,16 @@ h1{
 }
 
 /*  ---> ISS PAGE */
+#ISS_container_for_transition{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(./assets/ISS-wallpaper.jpg);
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
 
 #map{
   position: absolute;
@@ -427,7 +437,7 @@ h1{
   z-index: 1;
   height: 100vh;
   bottom: 0;
-  
+  transition: 500ms;
 }
 .mapboxgl-ctrl-bottom-right {
   display: none;
@@ -587,7 +597,7 @@ h1{
   padding-right: 1.5%;
   padding-left: 2%;
   left: 0;
-  
+
 }
 
 #img_otd_title{
