@@ -29,6 +29,27 @@ function App() {
   return (
     <>
       <div id="app_overflow">
+        <SwitchTransition>
+          <CSSTransition key={page} timeout={350} classNames="page">
+            {
+              {
+                ISS: (
+                  <Iss
+                    displayGallery={displayGallery}
+                    displayImgotd={displayImgotd}
+                  />
+                ),
+                SolarSystem: (
+                  <SolarSystem
+                    displayGallery={displayGallery}
+                    displayImgotd={displayImgotd}
+                  />
+                ),
+                Home: <Home displayGallery={displayGallery} />,
+              }[page]
+            }
+          </CSSTransition>
+        </SwitchTransition>
         <Gallery
           display={displayGallery}
           setDisplay={setDisplayGallery}
@@ -38,6 +59,14 @@ function App() {
           displayImgotd={displayImgotd}
           setDisplayImgotd={setDisplayImgotd}
           setPopup={setPopup}
+        />
+        <NavBar
+          loadPage={setPage}
+          currentPage={page}
+          setDisplayGallery={setDisplayGallery}
+          displayGallery={displayGallery}
+          displayImgotd={displayImgotd}
+          currentPopup={popup}
         />
       </div>
       <LogoNasa
@@ -59,35 +88,6 @@ function App() {
         displayGallery={displayGallery}
         displayImgotd={displayImgotd}
       />
-      <NavBar
-        loadPage={setPage}
-        currentPage={page}
-        setDisplayGallery={setDisplayGallery}
-        displayGallery={displayGallery}
-        displayImgotd={displayImgotd}
-        currentPopup={popup}
-      />
-      <SwitchTransition>
-        <CSSTransition key={page} timeout={350} classNames="page">
-          {
-            {
-              ISS: (
-                <Iss
-                  displayGallery={displayGallery}
-                  displayImgotd={displayImgotd}
-                />
-              ),
-              SolarSystem: (
-                <SolarSystem
-                  displayGallery={displayGallery}
-                  displayImgotd={displayImgotd}
-                />
-              ),
-              Home: <Home displayGallery={displayGallery} />,
-            }[page]
-          }
-        </CSSTransition>
-      </SwitchTransition>
     </>
   );
 }
