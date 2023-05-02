@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -7,14 +8,18 @@ import diamondFull from "../assets/diamondFull.svg";
 import diamond from "../assets/diamond.svg";
 
 function NavBar(props) {
+
   return (
     <div
       id="navbar_container"
-      style={
-        props.display
-          ? { bottom: "-20%", transitionDelay: "0ms" }
-          : { bottom: "0", transitionDelay: "600ms" }
-      }
+      style={(
+          props.displayGallery ? { bottom: "-20%", transitionDelay: "0ms" } :
+          props.displayImgotd ? { bottom: "-20%", transitionDelay: "0ms" } :
+          props.displayImgotd === false && props.currentPopup === "Imageotd" ? { transitionDelay: "1s", bottom: "0" } : 
+          props.displayGallery === false && props.currentPopup === "Gallery" ? { bottom: "0", transitionDelay: "600ms" } : 
+          { bottom: "0", transitionDelay: "0s" }
+      )}
+      // props.displayImgotd ? { bottom: "-20%", transitionDelay: "0ms" } : { bottom: "0", transitionDelay: "1s" }
     >
       <div id="navtitle_container">
         <div id="nav_topics" className="section_container">

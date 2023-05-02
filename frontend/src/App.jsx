@@ -8,6 +8,9 @@ import NavBar from "./components/NavBar";
 import LogoNasa from "./components/logoNASA";
 import Gallery from "./pages/Gallery";
 import IssTitle from "./components/IssTitle";
+import ImgOtdButton from "./components/ImgOtdButton";
+import ImageOfTheDay from "./pages/ImageOfTheDay";
+import UpDownArrow from "./components/up-downArrow";
 // --> PAGES
 import SolarSystem from "./pages/SolarSystem";
 
@@ -18,29 +21,60 @@ import "./App.css";
 
 function App() {
   const [page, setPage] = useState("Home");
+  const [popup, setPopup] = useState("default");
   const [displayGallery, setDisplayGallery] = useState(false);
+  const [displayImgotd, setDisplayImgotd] = useState(false);
   console.log(page);
 
   return (
     <>
       <div id="app_overflow">
-        <Gallery display={displayGallery} setDisplay={setDisplayGallery} />
+        <Gallery
+          display={displayGallery}
+          setDisplay={setDisplayGallery}
+          setPopup={setPopup}
+        />
+        <ImageOfTheDay
+          displayImgotd={displayImgotd}
+          setDisplayImgotd={setDisplayImgotd}
+          setPopup={setPopup}
+        />
+        <ImgOtdButton
+          displayImgotd={displayImgotd}
+          setDisplay={setDisplayImgotd}
+          displayGallery={displayGallery}
+        />
+        <UpDownArrow
+          displayGallery={displayGallery}
+          displayImgotd={displayImgotd}
+        />
 
         <NavBar
           loadPage={setPage}
           currentPage={page}
           setDisplayGallery={setDisplayGallery}
-          display={displayGallery}
+          displayGallery={displayGallery}
+          displayImgotd={displayImgotd}
+          currentPopup={popup}
         />
       </div>
-      <LogoNasa displayGallery={displayGallery} />
+      <LogoNasa
+        displayGallery={displayGallery}
+        displayImgotd={displayImgotd}
+        popup={popup}
+      />
       <IssTitle display={page} />
       <SwitchTransition>
         <CSSTransition key={page} timeout={350} classNames="page">
           {
             {
               ISS: <Iss displayGallery={displayGallery} />,
-              SolarSystem: <SolarSystem displayGallery={displayGallery} />,
+              SolarSystem: (
+                <SolarSystem
+                  displayGallery={displayGallery}
+                  displayImgotd={displayImgotd}
+                />
+              ),
               Home: <Home displayGallery={displayGallery} />,
             }[page]
           }
