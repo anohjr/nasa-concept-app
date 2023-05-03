@@ -9,8 +9,8 @@ function LeftArrow() {
     >
       <path
         d="M1 50.5L50.5 1H75.5L26 50.5L75.5 100H50.5L1 50.5Z"
-        fill="white"
-        stroke="white"
+        fill="#D9D9D9"
+        stroke="#D9D9D9"
       />
     </svg>
   );

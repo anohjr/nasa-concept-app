@@ -13,12 +13,12 @@ export default function ImageSwiper({
   setPageNum,
 }) {
   const indexOfImage = myData.findIndex((element) => element === image);
-  console.info(image);
+
   function handleNextClick() {
     if (indexOfImage === myData.length - 2) {
       setPageNum((prevState) => prevState + 1);
     }
-    console.info(image);
+
     setImage(myData[indexOfImage + 1]);
   }
   function handlePreviousClick() {
