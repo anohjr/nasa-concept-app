@@ -1,0 +1,74 @@
+@media only screen and (max-width: 430px) {
+
+#scrollbox-inner{
+        width: 100%; 
+        height: 70vh;
+        color: white;
+        background-color:black;
+        border-radius: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align:left;
+        top:0;
+        overflow: scroll;
+        margin-top:1vh;
+        margin-right: 0;
+      }
+#scrollbox-inner::-webkit-scrollbar{
+        width: 0px;
+        height: 0px;
+      } 
+      
+#scrollbox-inner::-webkit-scrollbar-thumb {
+        border-radius: 0px;
+
+      } 
+
+#scrollbox{
+        display: flex;
+        justify-content: flex-end;
+        position : relative;
+        z-index: 2;
+      } 
+      
+#article{
+        display:flex;
+        border : 2px solid #4E545D;
+        flex-direction: column;
+      
+      }
+
+#sidebar-title{
+        padding-bottom: 4vh;
+        text-align: start;
+        color: white;
+        top:0;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 10vh;
+        margin-right: 0;
+        
+
+      }
+.articles_css{
+        width: 100%;
+      }
+      
+    #titleArticles {
+      border : 10px;
+      border-left-style: solid ;
+      border-left-color:white;
+      padding-bottom: 1px;
+      padding-left:8px;
+      
+      }
+
+
+
+
+
+}
