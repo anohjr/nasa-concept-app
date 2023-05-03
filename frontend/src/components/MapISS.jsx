@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import mapboxgl from "mapbox-gl";
 import { useEffect } from "react";
 

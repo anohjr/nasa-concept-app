@@ -1,98 +1,21 @@
 @media only screen and (max-width: 430px) {
-    #iss_logo{
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        height: 15%;
 
-    }
-      
-      #header_container{
-        margin-top: 3%;
-        margin-left: 6%;
-        margin-right: 6%;
-        display: flex;
-        height: 10%;
+#navbar_container{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    height: 10.7vh;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-      }
-      
-      #ISS_title_container{
-        /*top: 3.5%;*/
-        right: 0;
-        margin-right: 6%;
-        position: absolute;
-        z-index: 2;
-        height: 10%;
-        width: 20%;
-        transition: 350ms;
-        transition-delay: 350ms;
-    
-      }
-      
-      #ISS_title_text{
-        font-family: Karla;
-        font-size: medium;
-        font-weight: 50;
-        text-align: end;
-        opacity: 0.7;
-        color: white;
-        margin: 0;
-        
-       
-
-        }
-
-        #nasa_logo_container{
-            position: absolute;
-            top: 0;
-            margin-top: 2.5%;
-            margin-left: 3%;
-            color: white;
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 3%;
-            height: 10%;
-            min-height: 60px;
-            width: 25%;
-            transition: 1s;
-            
-            
-          }
-          
-          #logo_img{
-            height: 70%;
-
-          }
-          
-          #logo_text_container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            
-
-          }
-          
-          #nasa_title{
-            font-weight: 200;
-            font-size: larger;
-            display: flex;
-            align-items: center;
-            height: auto;
-            width: 10rem;
-            margin: 0;
-            
-          }
-          
-          #nasa_text{
-            font-weight: 200;
-            font-size: medium;
-            display: flex;
-            align-items: center;
-            height: auto;
-            margin: 0;
-            opacity: 0.7;
-            line-height: 18px; 
-          }
-
-    }
+.icon_container{
+    display: flex;
+    justify-content: center;
+    gap: 12vw;
+    width: 100vw;
+}
+}
