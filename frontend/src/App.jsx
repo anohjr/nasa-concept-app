@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Iss from "./pages/ISS";
 
 import "./App.css";
+import "./sm.css";
 
 function App() {
   const [page, setPage] = useState("Home");
