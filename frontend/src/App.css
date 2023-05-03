@@ -377,10 +377,11 @@ cursor: pointer;
   border-radius: 15px;
 } 
 #scrollbox-inner{
-  width: 30vh; 
-  height: 50vh;
-  background-color: gold;
+  width: 40vh; 
+  height: 70vh;
   color: white;
+  background-color:rgba(217, 217, 217, 0.3);
+  border-radius: 10px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -388,26 +389,32 @@ cursor: pointer;
   text-align:left;
   top:0;
   overflow: scroll;
-  padding: 20px 10px 0 20px;
-  margin-top:0vh;
-  margin-right: 0vh;
+  padding: 5px 5px 0 5px;
+  margin-top:1vh;
   padding-bottom: 2vh;
 }
 
  #scrollbox{
   display: flex;
   justify-content: flex-end;
+  position : relative;
+  z-index: 2;
 } 
 
 #article{
   display:flex;
   border : 2px solid #4E545D;
   flex-direction: column;
+
+}
+
+#article-container{
+  padding-bottom: 20px;
+
 }
 
 #sidebar-title{
-  background-color: blue;
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
   text-align: end;
   color: white;
   top:0;
@@ -416,17 +423,24 @@ cursor: pointer;
   flex-direction: column;
   align-items: flex-end;
   margin-top:4vh;
-  margin-right: 10vh;
+  margin-right: 20vh;
 }
 
 
 
-#article-content{
-  background-color: #33373E;
-}
+
 
 .articles_css{
   width: 100%;
+}
+
+#titleArticles {
+border : 10px;
+border-left-style: solid ;
+border-left-color:white;
+padding-bottom: 1px;
+padding-left:8px;
+
 }
 
 /*  --->  SIDEBAR HOME PAGE - END   */
