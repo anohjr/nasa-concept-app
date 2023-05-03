@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import mapboxgl from "mapbox-gl";
 import { useEffect } from "react";
 
@@ -10,6 +11,14 @@ function MapISS() {
       style: "mapbox://styles/sashiki05/clgxpvz1j00do01pg2syidspx",
       zoom: 1.0,
     });
+
+    // let zoomValue = map.getZoom();
+    // console.log("zoom : ", zoomValue);
+    map.loadImage("src/assets/ISS-icone.png", (error, image) => {
+      if (error) throw error;
+      map.addImage("my-custom-icon", image);
+    });
+
     async function getLocation(updateSource) {
       try {
         const response = await fetch(
@@ -38,6 +47,8 @@ function MapISS() {
         throw new Error(err);
       }
     }
+    map.scrollZoom.enable();
+
     map.on("load", async () => {
       const geojson = await getLocation();
       map.addSource("iss", {
@@ -48,11 +59,11 @@ function MapISS() {
         id: "iss",
         type: "symbol",
         source: "iss",
+        size: 0.25,
         layout: {
-          "icon-image": "rocket",
+          "icon-image": "my-custom-icon",
         },
       });
-
       const updateSource = setInterval(async () => {
         const newgeojson = await getLocation(updateSource);
         map.getSource("iss").setData(newgeojson);
@@ -60,4 +71,5 @@ function MapISS() {
     });
   }, []);
 }
+
 export default MapISS;

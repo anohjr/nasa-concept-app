@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 function IssTitle(props) {
@@ -5,9 +6,9 @@ function IssTitle(props) {
     <div
       id="ISS_title_container"
       style={
-        props.display === "ISS"
-          ? { top: "3.5%", opacity: "1" }
-          : { top: "-10%", opacity: "0" }
+        props.display === "ISS" && (props.displayGallery || props.displayImgotd)!== true 
+          ? { top: "0", marginTop: "3.5%", opacity: "1" }
+          : { top: "-10%", opacity: "0", transitionDelay: "0ms" }
       }
     >
       <h1 style={{ textAlign: "end" }}>ISS Tracker</h1>

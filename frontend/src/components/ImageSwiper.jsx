@@ -1,7 +1,9 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 
-import nasaLogo from "../assets/nasa-logo.png";
+import CloseButton from "./CloseButton";
+import LeftArrow from "./LeftArrow";
+import RightArrow from "./RightArrow";
 // eslint-disable-next-line react/prop-types
 export default function ImageSwiper({
   image,
@@ -24,22 +26,28 @@ export default function ImageSwiper({
   }
   return (
     <div className="imageSwiper">
-      <div className="imageSwiperHeader">
-        <img src={nasaLogo} alt="" className="nasaLogo" />
-        <button type="button" onClick={() => setVisible(false)}>
-          Fermer
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={() => setVisible(false)}
+        className="close_button"
+      >
+        <CloseButton />
+      </button>
+
       <div className="imageSwiperBody">
         <button
           type="button"
           onClick={handlePreviousClick}
           disabled={indexOfImage < 1}
+          id="swiperButtonPrevious"
         >
-          Précédent
+          <LeftArrow />
         </button>
+
         <div className="imageDetailBody">
-          <img src={image.links[0].href} alt="" />
+          <img src={image.links[0].href} alt={image.data[0].title} />
+        </div>
+        <div className="imageDetailFooter">
           <h2>{image.data[0].title}</h2>
 
           {image.data[0].photographer ? (
@@ -51,8 +59,13 @@ export default function ImageSwiper({
           )}
         </div>
 
-        <button onClick={handleNextClick} type="button">
-          Suivant
+        <button
+          onClick={handleNextClick}
+          disabled={false}
+          type="button"
+          id="swiperButtonNext"
+        >
+          <RightArrow />
         </button>
       </div>
     </div>

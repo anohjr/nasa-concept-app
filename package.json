@@ -31,7 +31,9 @@
     "husky": "^8.0.3"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "mapbox-gl": "^2.14.1",
+    "react-map-gl": "^7.0.23",
     "react-router-dom": "^6.10.0",
     "react-transition-group": "^4.4.5"
   }
