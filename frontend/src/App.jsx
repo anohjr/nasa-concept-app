@@ -18,13 +18,17 @@ import Home from "./pages/Home";
 import Iss from "./pages/ISS";
 
 import "./App.css";
+import "./sm.css";
 
 function App() {
   const [page, setPage] = useState("Home");
   const [popup, setPopup] = useState("default");
   const [displayGallery, setDisplayGallery] = useState(false);
   const [displayImgotd, setDisplayImgotd] = useState(false);
-  console.log(page);
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 431px)").matches
+  );
+  console.log("matches :", matches);
 
   return (
     <>
@@ -67,12 +71,15 @@ function App() {
           displayGallery={displayGallery}
           displayImgotd={displayImgotd}
           currentPopup={popup}
+          matches={matches}
+          setMatches={setMatches}
         />
       </div>
       <LogoNasa
         displayGallery={displayGallery}
         displayImgotd={displayImgotd}
         popup={popup}
+        matches={matches}
       />
       <IssTitle
         display={page}

@@ -1,15 +1,19 @@
+/* eslint-disable import/no-duplicates */
 import mapboxgl from "mapbox-gl";
 import { useEffect } from "react";
 
 function MapISS() {
   useEffect(() => {
-    mapboxgl.accessToken = import.meta.env.VITE_APP_MAPBOX_TOKEN;
+    mapboxgl.accessToken =
+      "pk.eyJ1Ijoic2FzaGlraTA1IiwiYSI6ImNsZ3E4dm1qZTBidjQzaW1za251bng4c3kifQ.B3nqQSIrzlvcopabVV4Icw";
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/sashiki05/clgxpvz1j00do01pg2syidspx",
       zoom: 1.0,
     });
 
+    // let zoomValue = map.getZoom();
+    // console.log("zoom : ", zoomValue);
     map.loadImage("src/assets/ISS-icone.png", (error, image) => {
       if (error) throw error;
       map.addImage("my-custom-icon", image);
