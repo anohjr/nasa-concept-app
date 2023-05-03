@@ -1,0 +1,21 @@
+@media only screen and (max-width: 430px) {
+
+#navbar_container{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    height: 10.7vh;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon_container{
+    display: flex;
+    justify-content: center;
+    gap: 12vw;
+    width: 100vw;
+}
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import GalleryHeader from "../components/GalleryHeader";
-import "./Gallery.css";
+import "../App.css";
 import GalleryBody from "../components/GalleryBody";
 
 // eslint-disable-next-line react/prop-types
@@ -16,7 +16,6 @@ function Gallery({ setDisplay, display }) {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.info(data.collection.items);
         setMyData((prevState) => [...prevState, ...data.collection.items]);
       })
       .catch((error) => console.error(error));
