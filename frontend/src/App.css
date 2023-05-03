@@ -379,7 +379,7 @@ cursor: pointer;
 #scrollbox-inner{
   width: 30vh; 
   height: 50vh;
-  /* background-color: gold; */
+  background-color: gold;
   color: white;
   display: flex;
   align-items: flex-start;
@@ -406,7 +406,7 @@ cursor: pointer;
 }
 
 #sidebar-title{
-  /* background-color: blue; */
+  background-color: blue;
   padding-bottom: 3vh;
   text-align: end;
   color: white;
@@ -427,7 +427,6 @@ cursor: pointer;
 
 .articles_css{
   width: 100%;
-
 }
 
 /*  --->  SIDEBAR HOME PAGE - END   */
@@ -443,6 +442,7 @@ cursor: pointer;
 
 
 #position_background {
+
   background-image: url("./assets/home-wallpaper.jpg");
   height: 100vh;
 }

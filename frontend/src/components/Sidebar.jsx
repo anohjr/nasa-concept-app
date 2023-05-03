@@ -6,9 +6,8 @@ function Sidebar() {
   return (
     <div id="scrollbox">
       <div id="sidebar-title">
-        <h1>POUET POUET AND POUET AGAIN</h1>
-        <p>date du jour</p>
-        <p>WOUALLLLLEZZZZZZZZZZZ</p>
+        <h1>NASA Events</h1>
+        {new Date().toLocaleDateString()}
         <div id="scrollbox-inner">
           <Articles />
         </div>

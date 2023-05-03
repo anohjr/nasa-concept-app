@@ -11,7 +11,7 @@ function Articles() {
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
-      .then((data) => setArticles(data.articles))
+      .then((data) => setArticles(data.articles.slice(0, 4)))
       .catch((err) => console.error(err));
   }, []);
 
