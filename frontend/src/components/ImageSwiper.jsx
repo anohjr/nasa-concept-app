@@ -35,17 +35,26 @@ export default function ImageSwiper({
       </button>
 
       <div className="imageSwiperBody">
-        <button
-          type="button"
-          onClick={handlePreviousClick}
-          disabled={indexOfImage < 1}
-          id="swiperButtonPrevious"
-        >
-          <LeftArrow />
-        </button>
-
         <div className="imageDetailBody">
+          <button
+            type="button"
+            onClick={handlePreviousClick}
+            disabled={indexOfImage < 1}
+            id="swiperButtonPrevious"
+          >
+            <LeftArrow />
+          </button>
+
           <img src={image.links[0].href} alt={image.data[0].title} />
+
+          <button
+            onClick={handleNextClick}
+            disabled={indexOfImage === myData.length - 1}
+            type="button"
+            id="swiperButtonNext"
+          >
+            <RightArrow />
+          </button>
         </div>
         <div className="imageDetailFooter">
           <h2>{image.data[0].title}</h2>
@@ -58,15 +67,6 @@ export default function ImageSwiper({
             ""
           )}
         </div>
-
-        <button
-          onClick={handleNextClick}
-          disabled={false}
-          type="button"
-          id="swiperButtonNext"
-        >
-          <RightArrow />
-        </button>
       </div>
     </div>
   );

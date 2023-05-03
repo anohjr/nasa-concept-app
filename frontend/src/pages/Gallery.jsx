@@ -6,7 +6,7 @@ import GalleryBody from "../components/GalleryBody";
 // eslint-disable-next-line react/prop-types
 function Gallery({ setDisplay, display }) {
   const [myData, setMyData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("earth");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [pageNum, setPageNum] = useState(1);
 

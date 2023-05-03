@@ -10,7 +10,7 @@ function GalleryHeader({
   setPageNum,
   setMyData,
 }) {
-  const filterArray = ["Sagittarius", "Earth", "Quiz"];
+  const filterArray = ["Sagittarius", "Earth", "Quiz", "Nebula"];
 
   function handleChange(e) {
     setSearchQuery(e.target.value);
