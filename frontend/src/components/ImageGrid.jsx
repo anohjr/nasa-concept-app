@@ -15,7 +15,6 @@ export default function ImageGrid({
   const listInnerRef = useRef();
 
   useEffect(() => {
-    console.info(scrollPosition);
     document.getElementById("galleryImages").scrollTop = scrollPosition;
   }, [visible]);
 
