@@ -7,7 +7,7 @@ function MapISS() {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/sashiki05/clgxpvz1j00do01pg2syidspx",
-      zoom: 1.0,
+      zoom: 0.8,
     });
 
     map.loadImage("src/assets/ISS-icone.png", (error, image) => {
