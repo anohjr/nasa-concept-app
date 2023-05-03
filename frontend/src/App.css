@@ -2,6 +2,23 @@
   font-family: Karla;
   src: url(../src/fonts/karla/Karla[wght].ttf);
 }
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 12px;
+  }
+}
+
+@keyframes Pulse {
+  0%, 100%{
+    scale: 1;
+  }
+  50%{
+    scale: 1.1;
+  }
+  }
 
 body {
   font-family: Karla;
@@ -19,7 +36,7 @@ h1{
   position: relative;
   z-index: 1;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 /*  --> PAGES ANIMATIONS */
@@ -33,13 +50,25 @@ h1{
   transition: transform 350ms;
 }
 
+/* --> display on - display none transi */
+
+.display-on {
+  z-index: 2;
+  opacity: 1;
+}
+
+.display-off{
+  z-index: -1;
+  opacity: 0;
+}
+
 /*  --->  NASA LOGO COMPONENT  */
 
 #nasa_logo_container{
-  z-index: 2;
   position: absolute;
-  top: 2.5%;
-  margin-left: 6%;
+  top: 0;
+  margin-top: 2.5%;
+  margin-left: 3%;
   color: white;
   display: flex;
   align-items: center;
@@ -48,11 +77,7 @@ h1{
   height: 10%;
   min-height: 60px;
   width: 25%;
-  position:absolute;
-  top:0;
-  left: 0;
-  margin-top: 1vh;
-  margin-left: 1vh;
+  transition: 1s;
 }
 
 #logo_img{
@@ -97,7 +122,7 @@ h1{
   margin-bottom: 3%;
   right: 10%;
   left: 10%;
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -171,6 +196,7 @@ h1{
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.7);
   transition-duration: 700ms;
+  z-index: 2;
 }
 
 /* GALLERY : CLOSE BUTTON */
@@ -180,7 +206,7 @@ h1{
   width: 3rem;
   background-color: transparent;
   border: none;
-  height: 5%;
+  height: 4.5vh;
   right: 0;
   margin-right: 6%;
   top: 5%;
@@ -332,7 +358,7 @@ h1{
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
 
 }
 
@@ -420,9 +446,8 @@ h1{
 }
 
 /*  ---> ISS PAGE */
-
-#issBackground {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./assets/ISS-wallpaper.jpg);
+#ISS_container_for_transition{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), url(./assets/ISS-wallpaper.jpg);
   background-attachment: fixed;
   position: absolute;
   top: 0;
@@ -432,21 +457,14 @@ h1{
   width: 100%;
 }
 
-#map_container{
-  position: absolute;
-  width: 70%;
-  left: 15%;
-  right: 15%;
-  top: 20%;
-  transition: 350ms;
-}
-
 #map{
   position: absolute;
   width: 100%;
   top: 0;
+  z-index: 1;
+  height: 100vh;
   bottom: 0;
-  
+  transition: 500ms;
 }
 .mapboxgl-ctrl-bottom-right {
   display: none;
@@ -468,7 +486,6 @@ h1{
   margin-left: 6%;
   margin-right: 6%;
   display: flex;
-  justify-content: flex-end;
   height: 10%;
 }
 
@@ -477,7 +494,7 @@ h1{
   right: 0;
   margin-right: 6%;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   height: 10%;
   width: 40%;
   transition: 350ms;
@@ -583,11 +600,505 @@ h1{
 
 /*  ---> IMAGE OF THE DAY - POPUP */
 
-#Imageotd_popup{
+/*  ---> IMG OF THE DAY BUTTON COMPONENT */
+
+.img_otd_button_container{
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  gap: 5%;
+  height: 6%;
+  padding-right: 1%;
+  width: auto;
+  border-radius: 15px;
+  left: -150px;
+  bottom: 20%;
+  cursor: pointer;
+  /*  left --> -13.5% // 1%*/
+  transition: 800ms;
 }
 
+.img_otd_button_container:hover{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding-right: 1.5%;
+  padding-left: 2%;
+  left: 0;
+
+}
+
+#img_otd_title{
+  color: white;
+  width: 160px;
+  margin: 0;
+}
+
+#telescope_png{
+  transition: 350ms;
+  height: 100%;
+}
+
+#up_down_arrow{
+  position: absolute;
+  z-index: 2;
+  height: 8px;
+  opacity: 0.5;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 15.5vh;
+  margin-left: 2.7vh;
+  transition: 350ms;
+  /* Animation*/
+  animation: MoveUpDown 2s linear infinite;
+ 
+}
+
+/*  --> IMG OTD PAGE COMPONENT  */
+
+#Imageotd_popup{
+  font-weight: 200;
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  color: white;
+  transition-duration: 800ms;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  left: -100%;
+}
+
+#imgotdMainTitle_container{
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#day_date{
+  font-family: Karla;
+  font-weight: 200;
+  font-size: 20px;
+  opacity: 0.7;
+  margin: 0;
+  cursor: pointer;
+  width: fit-content;
+}
+
+#day_date:hover{
+  font-weight: 300;
+  color: cadetblue;
+  opacity: 1;
+}
+
+#imgotd_overflow{
+  position: absolute;
+  top:0;
+  height: 100vh;
+  width: 100%;
+  margin-left: 30%;
+  width: 56%;
+  overflow: scroll;
+}
+
+#imgotd_body{
+  position: relative;
+  background-color: black;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  margin-top: 15%;
+  left: 0;
+  height: auto;
+  padding-bottom: 40px;
+  transition-duration: 900ms;
+  cursor: default;
+}
+
+/*#IMG_otd{
+  display: flex;
+  height: 72.5vh;
+  width: 100%;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: 250ms;
+}
+*/
+
+#IMG_otd{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  align-content: center;
+}
+
+#IMG_title_credits{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  left: 0;
+  right:0;
+  gap: 20%;
+  margin-left: 8%;
+  margin-right: 8%;
+  height: 15vh;
+  width: 84%;
+}
+
+#IMG_title{
+  margin: 0;
+  font-weight: 200;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+#credits_title{
+  margin: 0;
+  font-weight: 300;
+  font-size: 15px;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+#explanation_txt{
+  font-weight: 200;
+  font-size: 17px;
+  margin-left: 8%;
+  margin-right: 8%;
+  width: 84%;
+  line-height: 28px;
+  opacity: 0.6;
+}
+
+#Archives{
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  list-style: none;
+  gap: 15px;
+  left: 0;
+  width: 24%;
+  padding: 0;
+  margin-top: 5%;
+  margin-right: 76%;
+  cursor: pointer;
+}
+
+#Archives_title{
+  font-weight: 200;
+  font-size: 27px;
+  margin-bottom: 5%;
+  cursor: default;
+}
+
+.li_day{
+  opacity: 0.6;
+  width: fit-content;
+  padding: 1%;
+}
+
+.li_day:hover{
+color: white;
+scale: 1.05;
+opacity: 1;
+}
+
+#search_date{
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+#loupe-label_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 5%;
+}
+
+#myDate{
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: right;
+  font-family: Karla;
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+  width: 130px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  border: none;
+  cursor: text;
+}
+
+#search_line_box{
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#search_line{
+width: 130px;
+height: 0px;
+border: 0.5px solid #FFFFFF;
+}
+
+/*::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: silver; }
+::-webkit-datetime-edit-text { color: red; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: blue; }
+::-webkit-datetime-edit-day-field { color: green; }
+::-webkit-datetime-edit-year-field { color: purple; }
+::-webkit-inner-spin-button { display: none; }*/
+::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer}
+
+
+/* --> Solar System page */
+@media only screen and (min-width: 430px) and (max-width: 1300px) {
+  #motion-container{
+    margin-left: 15vh;
+  }
+  #sun{
+    position: absolute;
+    z-index: 2;
+    width: 61.18px;
+    height: 61.18px;
+    left: 555px;
+    top: 310px;
+    background: radial-gradient(50% 50% at 50% 50%, #FFF4B9 56.77%, rgba(255, 153, 0, 0) 100%);
+  }
+}
+
+/* ---> SOLAR SYSTEM ANIMATE */
+
+
+@keyframes movemercury {
+  0% { 
+    offset-distance: 0%;
+    z-index: 3;
+  }
+  55% {
+    offset-distance: 55%;
+    z-index: 1;
+  }
+  100% { 
+    offset-distance: 100%;
+    z-index: 1;
+  }
+}
+
+@keyframes move{
+  0% { 
+    offset-distance: 0%;
+  }
+  
+  100% { 
+    offset-distance: 100%;
+  }
+}
+
+@keyframes moveneptune{
+  0% { 
+    offset-distance: 50%;
+  }
+  
+  100% { 
+    offset-distance: 150%;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+#motion-container{
+  margin-left: 35vh;
+  position: absolute;
+  transition: 1s;
+}
+#sun{
+  position: absolute;
+  z-index: 2;
+  width: 61.18px;
+  height: 61.18px;
+  left: 430px;
+  top: 195px;
+  background: radial-gradient(50% 50% at 50% 50%, #FFF4B9 56.77%, rgba(255, 153, 0, 0) 100%);
+}
+}
+
+#solar_system_paths{
+  width: 60vh;
+}
+
+/* --> sun */
+#planets_path{
+  transition: 200ms;
+}
+
+.planets{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  offset-distance: 0;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.path_on{
+  opacity: 1;
+  stroke-width: 1.5;
+  transition: 200ms;
+}
+
+.path_off{
+  opacity: 0.3;
+  stroke-width: 1;
+  transition: 200ms;
+}
+
+#motion_mercury {
+  background: radial-gradient(50% 50% at 50% 50%, #A96F00 77.08%, rgba(47, 47, 47, 0) 100%);
+  offset-path: path("M504.492 225.845C504.492 228.384 503.31 230.843 501.09 233.124C498.868 235.407 495.629 237.486 491.586 239.242C483.504 242.755 472.303 244.94 459.904 244.94C447.506 244.94 436.305 242.755 428.222 239.242C424.18 237.486 420.94 235.407 418.718 233.124C416.499 230.843 415.317 228.384 415.317 225.845C415.317 223.306 416.499 220.847 418.718 218.567C420.94 216.284 424.18 214.205 428.222 212.448C436.305 208.935 447.506 206.75 459.904 206.75C472.303 206.75 483.504 208.935 491.586 212.448C495.629 214.205 498.868 216.284 501.09 218.567C503.31 220.847 504.492 223.306 504.492 225.845Z");  
+  animation: movemercury 7.3s linear infinite;
+  z-index: 1;
+}
+
+#motion_venus{
+  background: radial-gradient(50% 50% at 50% 50%, #FF9900 82.29%, rgba(166, 60, 0, 0) 100%);
+  offset-path: path("M550.118 227.908C550.118 232.636 547.684 237.193 543.17 241.392C538.654 245.591 532.093 249.396 523.944 252.602C507.649 259.013 485.103 262.989 460.174 262.989C435.246 262.989 412.7 259.013 396.405 252.602C388.255 249.396 381.695 245.591 377.179 241.392C372.665 237.193 370.231 232.636 370.231 227.908C370.231 223.18 372.665 218.624 377.179 214.425C381.695 210.225 388.255 206.42 396.405 203.214C412.7 196.803 435.246 192.827 460.174 192.827C485.103 192.827 507.649 196.803 523.944 203.214C532.093 206.42 538.654 210.225 543.17 214.425C547.684 218.624 550.118 223.18 550.118 227.908Z");
+  animation: move 18.5s linear infinite;
+  z-index: 0;
+}
+
+#motion_earth{
+  offset-path: path("M595.21 230.488C595.21 237.709 591.513 244.64 584.717 250.998C577.921 257.356 568.058 263.106 555.83 267.944C531.376 277.621 497.558 283.617 460.179 283.617C422.8 283.617 388.983 277.621 364.529 267.944C352.3 263.106 342.438 257.356 335.641 250.998C328.845 244.64 325.149 237.709 325.149 230.488C325.149 223.267 328.845 216.336 335.641 209.978C342.438 203.62 352.3 197.87 364.529 193.032C388.983 183.355 422.8 177.359 460.179 177.359C497.558 177.359 531.376 183.355 555.83 193.032C568.058 197.87 577.921 203.62 584.717 209.978C591.513 216.336 595.21 223.267 595.21 230.488Z");
+  background: radial-gradient(50% 50% at 50% 50%, #0075FF 82.29%, rgba(166, 60, 0, 0) 100%);
+  animation: move 30s linear infinite;
+}
+
+#motion_mars{
+  offset-path: path("M624.824 235.693C624.824 244.703 620.226 253.339 611.799 261.247C603.372 269.156 591.151 276.301 576.007 282.312C545.723 294.333 503.852 301.78 457.577 301.78C411.301 301.78 369.43 294.333 339.146 282.312C324.002 276.301 311.781 269.156 303.354 261.247C294.927 253.339 290.329 244.703 290.329 235.693C290.329 226.682 294.927 218.047 303.354 210.139C311.781 202.23 324.002 195.085 339.146 189.074C369.43 177.052 411.301 169.606 457.577 169.606C503.852 169.606 545.723 177.052 576.007 189.074C591.151 195.085 603.372 202.23 611.799 210.139C620.226 218.047 624.824 226.682 624.824 235.693Z");
+  background: radial-gradient(50% 50% at 50% 50%, #A63C00 79.17%, rgba(166, 60, 0, 0) 100%);
+  animation: move 56.4s linear infinite;
+  z-index: 1;
+}
+
+#motion_jupiter{
+  background: radial-gradient(50% 50% at 50% 50%, #E7B400 82.29%, rgba(231, 180, 0, 0) 100%);
+  offset-path: path("M689.49 251.699C689.49 264.058 682.824 275.892 670.639 286.714C658.454 297.536 640.794 307.305 618.929 315.519C575.202 331.945 514.76 342.116 447.973 342.116C381.186 342.116 320.744 331.945 277.017 315.519C255.151 307.305 237.491 297.536 225.307 286.714C213.121 275.892 206.456 264.058 206.456 251.699C206.456 239.34 213.121 227.506 225.307 216.684C237.491 205.862 255.151 196.093 277.017 187.879C320.744 171.453 381.186 161.282 447.973 161.282C514.76 161.282 575.202 171.453 618.929 187.879C640.794 196.093 658.454 205.862 670.639 216.684C682.824 227.506 689.49 239.34 689.49 251.699Z");
+  animation: move 330s linear infinite;
+}
+
+#motion_saturn{
+  height: 31px;
+  width: 31px;
+  offset-path: path("M766.319 262.902C766.319 279.285 757.572 294.951 741.629 309.258C725.686 323.565 702.588 336.472 674.003 347.322C616.836 369.019 537.827 382.45 450.531 382.45C363.236 382.45 284.227 369.019 227.06 347.322C198.475 336.472 175.377 323.565 159.433 309.258C143.49 294.951 134.744 279.285 134.744 262.902C134.744 246.519 143.49 230.853 159.433 216.546C175.377 202.239 198.475 189.332 227.06 178.483C284.227 156.785 363.236 143.354 450.531 143.354C537.827 143.354 616.836 156.785 674.003 178.483C702.588 189.332 725.686 202.239 741.629 216.546C757.572 230.853 766.319 246.519 766.319 262.902Z");
+  animation: move 884s linear infinite;
+}
+
+#motion_uranus{
+  offset-path: path("M825.863 269.625C825.863 289.061 815.636 307.632 797.02 324.581C778.404 341.53 751.438 356.816 718.074 369.664C651.349 395.359 559.136 411.262 457.255 411.262C355.374 411.262 263.16 395.359 196.436 369.664C163.071 356.816 136.106 341.53 117.489 324.581C98.8735 307.632 88.6465 289.061 88.6465 269.625C88.6465 250.189 98.8735 231.617 117.489 214.668C136.106 197.719 163.071 182.433 196.436 169.585C263.16 143.89 355.374 127.987 457.255 127.987C559.136 127.987 651.349 143.89 718.074 169.585C751.438 182.433 778.404 197.719 797.02 214.668C815.636 231.617 825.863 250.189 825.863 269.625Z");
+  background: radial-gradient(50% 50% at 50% 50%, #3EB7AF 82.29%, rgba(166, 60, 0, 0) 100%);
+  animation: move 2520s linear infinite;
+}
+
+#motion_neptune{
+  offset-path: path("M48.1648 375.303C41.6334 353.447 46.5772 329.58 61.213 305.101C75.8496 280.621 100.157 255.57 132.26 231.388C196.466 183.027 291.772 138.207 402.961 108.414C514.151 78.6207 620.127 69.5073 701.573 78.8412C742.298 83.5083 776.863 92.7846 802.875 106.373C828.887 119.961 846.304 137.836 852.835 159.692C859.367 181.549 854.423 205.415 839.787 229.895C825.15 254.375 800.843 279.426 768.74 303.607C704.534 351.969 609.228 396.789 498.039 426.582C386.849 456.375 280.873 465.488 199.427 456.154C158.702 451.487 124.137 442.211 98.1247 428.622C72.1133 415.035 54.6961 397.16 48.1648 375.303Z");
+  background: radial-gradient(50% 50% at 50% 50%, #6F7DFF 82.29%, rgba(166, 60, 0, 0) 100%);
+  animation: moveneptune 4950s linear infinite;
+}
+
+/* SOLAR SYSTEM --> TEXT PART */
+#planets-list{
+  font-family: Karla;
+  list-style: none;
+  color: white;
+  text-align: right;
+  font-weight: 200;
+  font-size: large;
+  line-height: 45px;
+  position: absolute;
+  height: 47vh;
+  width: auto;
+  top: 0;
+  margin-top: 19vh;
+  right: 0;
+  margin-right: 3%;
+  cursor: pointer;
+  transition: 700ms;
+}
+
+.planet-on{
+  font-weight: 300;
+  font-size: larger;
+  transition: 100ms;
+}
+
+.planet-off{
+  opacity: 0.6;
+  transition: 100ms;
+}
+
+/* Solar system planets card --> */
+
+#planet_card_container{
+  color: white;
+  font-weight: 200;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  margin-top: 18vh;
+  left: 0;
+  margin-left: 3%;
+  width: 15.5%;
+  transition: 350ms;
+}
+
+#planet_title{
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#planet_img{
+  width: 100%;
+  height: 10vh;
+  object-fit: cover;
+}
+
+#planet_text_container{
+  text-align: right;
+  opacity: 0.6;
+}
+
+#planet_text_title{
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#planet_description{
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 21px;
+}
+
+#distance_number{
+  font-weight: 400;
+  color: #FF7A00;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#mesure_unity{
+  margin-top: 0;
+  font-size: 15px;
+}
 

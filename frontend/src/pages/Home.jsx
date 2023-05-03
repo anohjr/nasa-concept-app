@@ -1,19 +1,11 @@
 /* eslint-disable react/prop-types */
 import Sidebar from "../components/Sidebar";
 
-import Button from "../components/ButtonIotd";
-
-function Home({ displayGallery }) {
+function Home({ displayGallery, displayImgotd }) {
+  console.info(displayGallery);
   return (
     <div id="Home_Page">
-      {!displayGallery ? (
-        <>
-          <Sidebar />
-          <Button />
-        </>
-      ) : (
-        ""
-      )}
+      {displayGallery || displayImgotd ? "" : <Sidebar />}
     </div>
   );
 }
