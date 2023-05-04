@@ -313,11 +313,20 @@ h1{
   column-gap: 1rem;
   row-gap: 1rem;
   height: fit-content;
-  overflow: auto;
+  overflow-y: auto;
   max-height: 70vh;
-
+  scrollbar-color: white black;
+  scrollbar-width: thin;
 
 }
+#galleryImages::-webkit-scrollbar{
+  width: 15px;
+} 
+
+#galleryImages::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 15px;
+} 
 
 /* GALLERY GRID : IMAGE PREVIEW  */
 
@@ -515,15 +524,17 @@ h1{
 
 /*  --->  SIDEBAR HOME PAGE   */
 
-#scrollbox-inner::-webkit-scrollbar{
+.scrollbox-inner::-webkit-scrollbar{
   width: 5px;
 } 
 
-#scrollbox-inner::-webkit-scrollbar-thumb {
+.scrollbox-inner::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 15px;
 } 
-#scrollbox-inner{
+
+
+.scrollbox-inner{
   width: 40vh; 
   height: 70vh;
   color: white;
