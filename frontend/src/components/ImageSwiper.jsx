@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/prop-types */
 
@@ -24,6 +26,23 @@ export default function ImageSwiper({
   function handlePreviousClick() {
     setImage(myData[indexOfImage - 1]);
   }
+
+  function handleImageClick() {
+    // eslint-disable-next-line no-restricted-globals, no-alert
+    const check = confirm(
+      "Are you sure ? This will open the original image in a new tab (this image can be voluminous)"
+    );
+    if (check) {
+      fetch(`${image.href}`, {
+        hearders: { "Access-Control-Allow-Origin": "*" },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          window.open(data[0], "_blank").focus();
+        })
+        .catch((error) => console.error(error));
+    }
+  }
   return (
     <div className="imageSwiper">
       <button
@@ -45,7 +64,12 @@ export default function ImageSwiper({
             <LeftArrow />
           </button>
 
-          <img src={image.links[0].href} alt={image.data[0].title} />
+          <img
+            title="Open original image in new tab"
+            src={image.links[0].href}
+            alt={image.data[0].title}
+            onClick={handleImageClick}
+          />
 
           <button
             onClick={handleNextClick}
