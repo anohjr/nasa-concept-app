@@ -523,9 +523,8 @@ h1{
   border-radius: 15px;
 } 
 #scrollbox-inner{
-  width: 30vh; 
-  height: 50vh;
-  /* background-color: gold; */
+  width: 40vh; 
+  height: 70vh;
   color: white;
   display: flex;
   align-items: flex-start;
@@ -534,28 +533,34 @@ h1{
   text-align:left;
   top:0;
   overflow: scroll;
-  padding: 20px 10px 0 20px;
-  margin-top:0vh;
-  margin-right: 0vh;
-  padding-bottom: 2vh;
+  margin-top:1vh;
+  padding-bottom: 0vh;
 }
 
  #scrollbox{
   position: relative;
   display: flex;
   justify-content: flex-end;
-  z-index: 3;
+  transition: 500ms;
 } 
 
 #article{
   display:flex;
   border : 2px solid #4E545D;
   flex-direction: column;
+
+}
+
+#article-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  background-color: rgba(217, 217, 217, 0.2);
+  cursor: pointer;
 }
 
 #sidebar-title{
-  /* background-color: blue; */
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
   text-align: end;
   color: white;
   top:0;
@@ -564,18 +569,40 @@ h1{
   flex-direction: column;
   align-items: flex-end;
   margin-top:4vh;
-  margin-right: 10vh;
+  margin-right: 3%;
 }
 
-
-
-#article-content{
-  background-color: #33373E;
-}
-
-.articles_css{
+.img_article{
+  height: 25vh;
   width: 100%;
+  object-fit: cover;
+  transition: 100ms;
+}
 
+#nasaEvent_date{
+  font-family: Karla;
+  font-weight: 200;
+  font-size:large;
+  margin-top: 5px;
+}
+
+.img_article:hover{
+  -webkit-filter: brightness(.6);
+   filter: brightness(.6);
+}
+
+.articles_title{
+  font-size: large;
+  font-weight: 300;
+  padding-right: 7px;
+}
+
+#titleArticles_container {
+border : 7px;
+border-left-style: solid ;
+border-left-color:white;
+padding-bottom: 1px;
+padding-left:8px;
 }
 
 /*  --->  SIDEBAR HOME PAGE - END   */

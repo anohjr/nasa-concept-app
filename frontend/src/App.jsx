@@ -49,7 +49,12 @@ function App() {
                     displayImgotd={displayImgotd}
                   />
                 ),
-                Home: <Home displayGallery={displayGallery} />,
+                Home: (
+                  <Home
+                    displayGallery={displayGallery}
+                    displayImgotd={displayImgotd}
+                  />
+                ),
               }[page]
             }
           </CSSTransition>
