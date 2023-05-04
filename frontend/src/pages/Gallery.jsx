@@ -4,7 +4,7 @@ import "../App.css";
 import GalleryBody from "../components/GalleryBody";
 
 // eslint-disable-next-line react/prop-types
-function Gallery({ setDisplay, display }) {
+function Gallery({ setDisplay, display, setPopup }) {
   const [myData, setMyData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -30,6 +30,7 @@ function Gallery({ setDisplay, display }) {
         searchQuery={searchQuery}
         setPageNum={setPageNum}
         setMyData={setMyData}
+        setPopup={setPopup}
       />
       {myData ? <GalleryBody data={myData} setPageNum={setPageNum} /> : ""}
     </div>

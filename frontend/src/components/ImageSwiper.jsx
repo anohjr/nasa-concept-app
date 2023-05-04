@@ -49,7 +49,7 @@ export default function ImageSwiper({
 
           <button
             onClick={handleNextClick}
-            disabled={indexOfImage === myData.length - 1}
+            disabled={indexOfImage >= myData.length - 1}
             type="button"
             id="swiperButtonNext"
           >

@@ -196,11 +196,13 @@ h1{
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.7);
   transition-duration: 700ms;
+  z-index: 2;
 }
 
 /* GALLERY : CLOSE BUTTON */
 
 .close_button{
+  z-index: 1;
   position: absolute;
   width: 3rem;
   background-color: transparent;
@@ -314,10 +316,15 @@ h1{
   height: fit-content;
   overflow: auto;
   max-height: 70vh;
-
-
 }
 
+#galleryImages::-webkit-scrollbar{
+  width: 4px;
+} 
+
+#galleryImages::-webkit-scrollbar-thumb {
+  background-color: white;
+} 
 /* GALLERY GRID : IMAGE PREVIEW  */
 
 
@@ -357,7 +364,7 @@ h1{
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
 
 }
 
@@ -500,6 +507,10 @@ h1{
   transition-delay: 350ms;
 }
 
+#iss_title{
+  text-align: end;
+}
+
 #ISS_title_text{
   font-family: Karla;
   font-size: medium;
@@ -515,12 +526,11 @@ h1{
 /*  --->  SIDEBAR HOME PAGE   */
 
 #scrollbox-inner::-webkit-scrollbar{
-  width: 5px;
+  width: 4px;
 } 
 
 #scrollbox-inner::-webkit-scrollbar-thumb {
   background-color: white;
-  border-radius: 15px;
 } 
 
 #scrollbox-inner{
@@ -547,9 +557,7 @@ h1{
 
 #article{
   display:flex;
-  border : 2px solid #4E545D;
   flex-direction: column;
-
 }
 
 #article-container{
@@ -599,7 +607,7 @@ h1{
 }
 
 #titleArticles_container {
-border : 7px;
+border : 5px;
 border-left-style: solid ;
 border-left-color:white;
 padding-bottom: 1px;
@@ -679,7 +687,7 @@ padding-left:8px;
   transition: 350ms;
   /* Animation*/
   animation: MoveUpDown 2s linear infinite;
-  position: absolute;
+ 
 }
 
 /*  --> IMG OTD PAGE COMPONENT  */
@@ -687,7 +695,7 @@ padding-left:8px;
 #Imageotd_popup{
   font-weight: 200;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   height: 100%;
   width: 100%;
   color: white;
@@ -723,11 +731,25 @@ padding-left:8px;
   position: absolute;
   top:0;
   height: 100vh;
-  width: 100%;
-  margin-left: 30%;
-  width: 56%;
+  margin-left: 30vw;
+  width: 57vw;
   overflow: scroll;
+  margin-right: 10%;
 }
+
+#imgotd_overflow::-webkit-scrollbar{
+  width: 10px;
+} 
+
+#imgotd_overflow::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-radius: 15px;
+} 
+
+#imgotd_overflow::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
 
 #imgotd_body{
   position: relative;
@@ -742,6 +764,7 @@ padding-left:8px;
   padding-bottom: 40px;
   transition-duration: 900ms;
   cursor: default;
+  width: 56vw;
 }
 
 /*#IMG_otd{

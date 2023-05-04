@@ -13,9 +13,7 @@ import HomeLogoOff from "./nav-bar-icons/homeLogo-off";
 import SaturnLogoOff from "./nav-bar-icons/saturnLogo-off";
 import IssLogoOff from "./nav-bar-icons/issLogo-off";
 
-
 function NavBar(props) {
-  
   useEffect(() => {
     window
       .matchMedia("(min-width: 431px)")
@@ -114,10 +112,14 @@ function NavBar(props) {
       {!props.matches && (
         <div id="navbar_container">
           <div className="icon_container">
-            <HomeLogoOff loadPageHome={() => props.loadPage("Home")}/>
-            <PictureLogoOff setDisplayGalleryTrue={() => props.setDisplayGallery(true)} />
-            <SaturnLogoOff loadPageSaturn={() => props.loadPage("SolarSystem")} />
-            <IssLogoOff loadPageIss={() => props.loadPage("ISS")}/>
+            <HomeLogoOff loadPageHome={() => props.loadPage("Home")} />
+            <PictureLogoOff
+              setDisplayGalleryTrue={() => props.setDisplayGallery(true)}
+            />
+            <SaturnLogoOff
+              loadPageSaturn={() => props.loadPage("SolarSystem")}
+            />
+            <IssLogoOff loadPageIss={() => props.loadPage("ISS")} />
           </div>
         </div>
       )}
