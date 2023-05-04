@@ -2,7 +2,6 @@
 import Sidebar from "../components/Sidebar";
 
 function Home({ displayGallery, displayImgotd }) {
-  console.info(displayGallery);
   return (
     <div id="Home_Page">
       {displayGallery || displayImgotd ? "" : <Sidebar />}
