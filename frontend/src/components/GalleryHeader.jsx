@@ -9,6 +9,7 @@ function GalleryHeader({
   setSearchQuery,
   setPageNum,
   setMyData,
+  setPopup,
 }) {
   const filterArray = ["Sagittarius", "Earth", "Quiz", "Nebula"];
 
@@ -19,6 +20,7 @@ function GalleryHeader({
   }
   function closeGallery() {
     setGalleryVisible(false);
+    setPopup("Gallery");
   }
 
   return (

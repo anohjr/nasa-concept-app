@@ -169,28 +169,29 @@
 }
 
 .imageDetailBody {
+  width: 100%;
   margin-top: 13vh;  
 }
 
 .imageDetailBody img{
-  object-fit: scale-down;
+ 
   width: 100%;
   }
+.imageDetailBody button {
+ position: relative;
 
-
+}
 .imageSwiperBody svg{
   height: 3rem;
   opacity: 0.5;
 }
 
 
-#swiperButtonNext {
-  bottom: 50vh;
+#swiperButtonNext {  
   right:2vw;
 }
 
-#swiperButtonPrevious {  
-  bottom: 50vh;
+#swiperButtonPrevious {   
   left:2vw;
 }
 
