@@ -3,31 +3,32 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 
-const api =
-  "https://newsapi.org/v2/everything?q=nasa&from=2023-03-26&sortBy=publishedAt&apiKey=";
-// ab8745cc1feb40fa8e5c80c24012dceb";
+const api = "https://api.spaceflightnewsapi.net/v3/articles";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     fetch(api)
       .then((res) => res.json())
-      .then((data) => setArticles(data.articles))
+      .then((data) => setArticles(data))
       .catch((err) => console.error(err));
   }, []);
 
   return (
     <div>
       {articles?.map((article) => {
-        const { title, urlToImage, url } = article;
+        const { title, imageUrl, url } = article;
 
         return (
           <div
+            id="article-container"
             key={article.id}
             onClick={() => window.open(url, "_blank").focus()}
           >
-            <img src={urlToImage} className="articles_css" alt={title} />
-            <h3>{title}</h3>
+            <img src={imageUrl} className="img_article" alt={title} />
+            <div id="titleArticles_container">
+              <h3 className="articles_title">{title}</h3>
+            </div>
           </div>
         );
       })}
