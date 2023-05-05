@@ -268,7 +268,7 @@
   left: 0;
 }
 
-.close_button{
+#header_container .close_button{
   display: none;
 }
 
