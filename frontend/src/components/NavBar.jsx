@@ -12,6 +12,7 @@ import PictureLogoOff from "./nav-bar-icons/pictureLogo-off";
 import HomeLogoOff from "./nav-bar-icons/homeLogo-off";
 import SaturnLogoOff from "./nav-bar-icons/saturnLogo-off";
 import IssLogoOff from "./nav-bar-icons/issLogo-off";
+import TelescopeLogoOff from "./nav-bar-icons/telescopeLogo-off";
 
 function NavBar(props) {
   useEffect(() => {
@@ -112,14 +113,39 @@ function NavBar(props) {
       {!props.matches && (
         <div id="navbar_container">
           <div className="icon_container">
-            <HomeLogoOff loadPageHome={() => props.loadPage("Home")} />
+            <HomeLogoOff
+              loadPageHome={() => {
+                props.loadPage("Home");
+                props.setDisplayGallery(false);
+                props.setDisplayImgotd(false);
+              }}
+            />
             <PictureLogoOff
-              setDisplayGalleryTrue={() => props.setDisplayGallery(true)}
+              setDisplayGalleryTrue={() => {
+                props.setDisplayGallery(true);
+                props.setDisplayImgotd(false);
+              }}
             />
             <SaturnLogoOff
-              loadPageSaturn={() => props.loadPage("SolarSystem")}
+              loadPageSaturn={() => {
+                props.loadPage("SolarSystem");
+                props.setDisplayGallery(false);
+                props.setDisplayImgotd(false)
+              }}
             />
-            <IssLogoOff loadPageIss={() => props.loadPage("ISS")} />
+            <IssLogoOff
+              loadPageIss={() => {
+                props.loadPage("ISS");
+                props.setDisplayGallery(false);
+                props.setDisplayImgotd(false)
+              }}
+            />
+            <TelescopeLogoOff
+              setDisplayImgotd={() => {
+                props.setDisplayImgotd(true);
+                props.setDisplayGallery(false);
+              }}
+            />
           </div>
         </div>
       )}

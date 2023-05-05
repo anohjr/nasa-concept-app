@@ -5,8 +5,8 @@ function SaturnLogoOff(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      width="45"
-      height="45"
+      width="43"
+      height="43"
       x="0"
       y="0"
       viewBox="0 0 480.124 480"
