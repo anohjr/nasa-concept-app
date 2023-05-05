@@ -117,28 +117,35 @@ function NavBar(props) {
               loadPageHome={() => {
                 props.loadPage("Home");
                 props.setDisplayGallery(false);
+                props.setDisplayImgotd(false);
               }}
             />
             <PictureLogoOff
-              setDisplayGalleryTrue={() => props.setDisplayGallery(true)}
+              setDisplayGalleryTrue={() => {
+                props.setDisplayGallery(true);
+                props.setDisplayImgotd(false);
+              }}
             />
             <SaturnLogoOff
               loadPageSaturn={() => {
                 props.loadPage("SolarSystem");
                 props.setDisplayGallery(false);
+                props.setDisplayImgotd(false)
               }}
             />
             <IssLogoOff
               loadPageIss={() => {
                 props.loadPage("ISS");
                 props.setDisplayGallery(false);
+                props.setDisplayImgotd(false)
               }}
             />
-            <TelescopeLogoOff 
-             setDisplayImgotd={() => {
-              props.setDisplayImgotd(true)
-             }}
-             />
+            <TelescopeLogoOff
+              setDisplayImgotd={() => {
+                props.setDisplayImgotd(true);
+                props.setDisplayGallery(false);
+              }}
+            />
           </div>
         </div>
       )}
