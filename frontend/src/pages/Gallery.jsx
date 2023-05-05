@@ -4,7 +4,7 @@ import "../App.css";
 import GalleryBody from "../components/GalleryBody";
 
 // eslint-disable-next-line react/prop-types
-function Gallery({ setDisplay, display, setPopup }) {
+function Gallery({ setDisplay, display, setPopup, matches }) {
   const [myData, setMyData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -23,16 +23,42 @@ function Gallery({ setDisplay, display, setPopup }) {
   }, [searchQuery, pageNum]);
 
   return (
-    <div className="gallery" id="home" style={{ top: display ? "0" : "100%" }}>
-      <GalleryHeader
-        setGalleryVisible={setDisplay}
-        setSearchQuery={setSearchQuery}
-        searchQuery={searchQuery}
-        setPageNum={setPageNum}
-        setMyData={setMyData}
-        setPopup={setPopup}
-      />
-      {myData ? <GalleryBody data={myData} setPageNum={setPageNum} /> : ""}
+    <div>
+      {matches && (
+        <div
+          className="gallery"
+          id="home"
+          style={{ top: display ? "0" : "100%" }}
+        >
+          <GalleryHeader
+            setGalleryVisible={setDisplay}
+            setSearchQuery={setSearchQuery}
+            searchQuery={searchQuery}
+            setPageNum={setPageNum}
+            setMyData={setMyData}
+            setPopup={setPopup}
+            matches={matches}
+          />
+          {myData ? <GalleryBody data={myData} setPageNum={setPageNum} /> : ""}
+        </div>
+      )}
+      {!matches && (
+        <div
+          className="gallery"
+          id="home"
+          style={display ? { zIndex: "2" } : { zIndex: "-1" }}
+        >
+          <GalleryHeader
+            setGalleryVisible={setDisplay}
+            setSearchQuery={setSearchQuery}
+            searchQuery={searchQuery}
+            setPageNum={setPageNum}
+            setMyData={setMyData}
+            setPopup={setPopup}
+          />
+          {myData ? <GalleryBody data={myData} setPageNum={setPageNum} /> : ""}
+        </div>
+      )}
     </div>
   );
 }

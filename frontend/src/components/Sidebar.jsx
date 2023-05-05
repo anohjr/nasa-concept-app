@@ -22,7 +22,7 @@ function Sidebar(props) {
       <div id="sidebar-title">
         <h1>NASA Events</h1>
         <p id="nasaEvent_date">{new Date().toLocaleDateString()}</p>
-        <div id="scrollbox-inner">
+        <div className="scrollbox-inner">
           <Articles />
         </div>
       </div>

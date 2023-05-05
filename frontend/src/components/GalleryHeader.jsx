@@ -10,6 +10,7 @@ function GalleryHeader({
   setPageNum,
   setMyData,
   setPopup,
+  matches,
 }) {
   const filterArray = ["Sagittarius", "Earth", "Quiz", "Nebula"];
 
@@ -25,11 +26,15 @@ function GalleryHeader({
 
   return (
     <div id="header">
-      <h1>Image Gallery</h1>
-      <button type="button" onClick={closeGallery} className="close_button">
-        <CloseButton />
-      </button>
-
+      {matches && (
+        <>
+          <h1>Image Gallery</h1>
+          <button type="button" onClick={closeGallery} className="close_button">
+            <CloseButton />
+          </button>
+        </>
+      )}
+      {!matches && <h1>Gallery</h1>}
       <div className="searchBar">
         <input
           placeholder="Search here &#128270;"

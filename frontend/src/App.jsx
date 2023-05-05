@@ -38,8 +38,40 @@ function App() {
   return (
     <>
       <div id="app_overflow">
-        <SwitchTransition>
-          <CSSTransition key={page} timeout={350} classNames="page">
+        {matches && (
+          <SwitchTransition>
+            <CSSTransition key={page} timeout={350} classNames="page">
+              {
+                {
+                  ISS: (
+                    <Iss
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                    />
+                  ),
+                  SolarSystem: (
+                    <SolarSystem
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                      matches={matches}
+                      setMatches={setMatches}
+                    />
+                  ),
+                  Home: (
+                    <Home
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                      matches={matches}
+                    />
+                  ),
+                }[page]
+              }
+            </CSSTransition>
+          </SwitchTransition>
+        )}
+        {!matches && (
+          <>
+            {" "}
             {
               {
                 ISS: (
@@ -65,17 +97,19 @@ function App() {
                 ),
               }[page]
             }
-          </CSSTransition>
-        </SwitchTransition>
+          </>
+        )}
         <Gallery
           display={displayGallery}
           setDisplay={setDisplayGallery}
           setPopup={setPopup}
+          matches={matches}
         />
         <ImageOfTheDay
           displayImgotd={displayImgotd}
           setDisplayImgotd={setDisplayImgotd}
           setPopup={setPopup}
+          matches={matches}
         />
         <NavBar
           loadPage={setPage}
@@ -86,6 +120,7 @@ function App() {
           currentPopup={popup}
           matches={matches}
           setMatches={setMatches}
+          setDisplayImgotd={setDisplayImgotd}
         />
       </div>
 

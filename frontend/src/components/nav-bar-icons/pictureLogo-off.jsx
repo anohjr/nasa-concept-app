@@ -5,8 +5,8 @@ function PictureLogoOff(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      width="35"
-      height="35"
+      width="32"
+      height="32"
       x="0"
       y="0"
       viewBox="0 0 512 512"

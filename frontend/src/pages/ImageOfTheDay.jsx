@@ -138,32 +138,59 @@ function ImageOfTheDay(props) {
         <CloseButtonIMG close={closeButton} />
       </div>
       <div id="imgotd_overflow">
-        <div
-          id="imgotd_body"
-          style={
-            props.displayImgotd
-              ? { marginTop: "15%", transitionDelay: "350ms" }
-              : { marginTop: "110%" }
-          }
-        >
-          <div id="IMG_otd_container">
-            <img
-              id="IMG_otd"
-              src={imageData === null ? "" : imageData.url}
-              alt={imageData === null ? "" : imageData.title}
-            />
+        {props.matches && (
+          <div
+            id="imgotd_body"
+            style={
+              props.displayImgotd
+                ? { marginTop: "15%", transitionDelay: "350ms" }
+                : { marginTop: "110%" }
+            }
+          >
+            <div id="IMG_otd_container">
+              <img
+                id="IMG_otd"
+                src={imageData === null ? "" : imageData.url}
+                alt={imageData === null ? "" : imageData.title}
+              />
+            </div>
+            <div id="IMG_title_credits">
+              <h4 id="IMG_title">
+                {imageData === null ? "" : imageData.title}
+              </h4>
+              <p id="credits_title">
+                Credit & Copyright :{" "}
+                {imageData === null ? "" : imageData.copyright}
+              </p>
+            </div>
+            <div id="explanation_txt">
+              {imageData === null ? "" : imageData.explanation}
+            </div>
           </div>
-          <div id="IMG_title_credits">
-            <h4 id="IMG_title">{imageData === null ? "" : imageData.title}</h4>
-            <p id="credits_title">
-              Credit & Copyright :{" "}
-              {imageData === null ? "" : imageData.copyright}
-            </p>
+        )}{" "}
+        {!props.matches && (
+          <div id="imgotd_body">
+            <div id="IMG_otd_container">
+              <img
+                id="IMG_otd"
+                src={imageData === null ? "" : imageData.url}
+                alt={imageData === null ? "" : imageData.title}
+              />
+            </div>
+            <div id="IMG_title_credits">
+              <h4 id="IMG_title">
+                {imageData === null ? "" : imageData.title}
+              </h4>
+              <p id="credits_title">
+                Credit & Copyright :{" "}
+                {imageData === null ? "" : imageData.copyright}
+              </p>
+            </div>
+            <div id="explanation_txt">
+              {imageData === null ? "" : imageData.explanation}
+            </div>
           </div>
-          <div id="explanation_txt">
-            {imageData === null ? "" : imageData.explanation}
-          </div>
-        </div>
+        )}
       </div>
       <ul id="Archives">
         <li id="Archives_title">Archives</li>
