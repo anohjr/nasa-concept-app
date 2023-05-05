@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 // --> Components
@@ -28,7 +28,12 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 431px)").matches
   );
-  console.log("matches :", matches);
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 431px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
 
   return (
     <>
@@ -47,12 +52,15 @@ function App() {
                   <SolarSystem
                     displayGallery={displayGallery}
                     displayImgotd={displayImgotd}
+                    matches={matches}
+                    setMatches={setMatches}
                   />
                 ),
                 Home: (
                   <Home
                     displayGallery={displayGallery}
                     displayImgotd={displayImgotd}
+                    matches={matches}
                   />
                 ),
               }[page]
@@ -80,12 +88,16 @@ function App() {
           setMatches={setMatches}
         />
       </div>
-      <LogoNasa
-        displayGallery={displayGallery}
-        displayImgotd={displayImgotd}
-        popup={popup}
-        matches={matches}
-      />
+
+      {matches && (
+        <LogoNasa
+          displayGallery={displayGallery}
+          displayImgotd={displayImgotd}
+          popup={popup}
+          matches={matches}
+        />
+      )}
+
       <IssTitle
         display={page}
         displayGallery={displayGallery}

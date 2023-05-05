@@ -45,73 +45,50 @@ function MapISS() {
       }
     }
 
-    map.on(
-      "load",
-      async () => {
-        const geojson = await getLocation();
-        map.addSource("iss", {
-          type: "geojson",
-          data: geojson,
-        });
-        map.on("load", () => {
-          map.addSource("iss", {
-            type: "geojson",
-            data: {
-              type: "FeatureCollection",
-              features: [
-                {
-                  type: "Feature",
-                  properties: {
-                    description:
-                      '<strong>Make it Mount Pleasant</strong><p><a href="http://www.mtpleasantdc.com/makeitmtpleasant" target="_blank" title="Opens in a new window">Make it Mount Pleasant</a> is a handmade and vintage market and afternoon of live entertainment and kids activities. 12:00-6:00 p.m.</p>',
-                    icon: "theatre",
-                  },
-                  geometry: {
-                    type: "geojson",
-                    coordinates: [0, 0],
-                  },
-                },
-              ],
-            },
-          });
+    map.on("load", async () => {
+      const geojson = await getLocation();
+      map.addSource("iss", {
+        type: "geojson",
+        data: geojson,
+      });
 
-          map.addLayer({
-            id: "iss",
-            type: "symbol",
-            source: "iss",
-            size: 0.25,
-            layout: {
-              "icon-image": "my-custom-icon",
-              "icon-allow-overlap": true,
-            },
-          });
-          map.on("click", "iss", (e) => {
-            const coordinates = e.features[0].geometry.coordinates.slice();
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-            new mapboxgl.Popup()
-              .setLngLat(coordinates)
-              // .setHTML(description)
-              .addTo(map);
-          });
-          map.on("mouseenter", "iss", () => {
-            map.getCanvas().style.cursor = "pointer";
-          });
+      map.addLayer({
+        id: "iss",
+        type: "symbol",
+        source: "iss",
+        size: 0.25,
+        layout: {
+          "icon-image": "my-custom-icon",
+          "icon-allow-overlap": true,
+        },
+      });
+      map.on("click", "iss", (e) => {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(
+            '<strong>Welcome to  Internationale Space Station </strong><p>Click&nbsp;<a href="https://www.nasa.gov/mission_pages/station/main/index.html" target="_blank" title="Opens in a new window">here&nbsp;</a>for more information about us </p>'
+          )
 
-          map.on("mouseleave", "iss", () => {
-            map.getCanvas().style.cursor = "";
-          });
+          .addTo(map);
+      });
+      map.on("mouseenter", "iss", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
 
-          const updateSource = setInterval(async () => {
-            const newgeojson = await getLocation(updateSource);
-            map.getSource("iss").setData(newgeojson);
-          }, 4000);
-        });
-      },
-      []
-    );
-  });
+      map.on("mouseleave", "iss", () => {
+        map.getCanvas().style.cursor = "";
+      });
+
+      const updateSource = setInterval(async () => {
+        const newgeojson = await getLocation(updateSource);
+        map.getSource("iss").setData(newgeojson);
+      }, 4000);
+    });
+  }, []);
 }
 
 export default MapISS;
