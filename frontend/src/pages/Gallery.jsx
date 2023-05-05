@@ -46,7 +46,7 @@ function Gallery({ setDisplay, display, setPopup, matches }) {
         <div
           className="gallery"
           id="home"
-          style={display ? { zIndex: "2" } : { zIndex: "-1" }}
+          style={display ? { zIndex: "3" } : { zIndex: "-1" }}
         >
           <GalleryHeader
             setGalleryVisible={setDisplay}
