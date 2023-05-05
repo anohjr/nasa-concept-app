@@ -2,7 +2,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // --> PLANETS CARD IMPORT DEKSTOP
 import SunCard from "../components/planets-card/sun-card";
 import MercuryCard from "../components/planets-card/mercury-card";
@@ -14,16 +14,15 @@ import SaturnCard from "../components/planets-card/saturn-card";
 import UranusCard from "../components/planets-card/uranus-card";
 import NeptuneCard from "../components/planets-card/neptune-card";
 
-// --> PLANETS CARD IMPORT SM 
+// --> PLANETS CARD IMPORT SM
 import SunCardSm from "../components/planets-card-sm/sun-card-sm";
+
+// --> ARROWS IMPORT
+import arrowL from "../assets/arrowL.svg";
+import arrowR from "../assets/arrowR.svg";
 
 function SolarSystem(props) {
   const [path, setPath] = useState(false);
-  useEffect(() => {
-    window
-      .matchMedia("(min-width: 431px)")
-      .addEventListener("change", (e) => props.setMatches(e.matches));
-  }, []);
   return (
     <div>
       {props.matches && (
@@ -398,7 +397,16 @@ function SolarSystem(props) {
             </svg>
           </div>
           <SunCardSm />
-          
+          <div id="solar-arrows-container">
+            <div className="arrow-txt-container">
+              <img id="solar-arrow-L" src={arrowL} alt="left arrow" />
+              <p>Neptune</p>
+            </div>
+            <div className="arrow-txt-container">
+              <img id="solar-arrow-R" src={arrowR} alt="right arrow" />
+              <p>Mercury</p>
+            </div>
+          </div>
         </div>
       )}
     </div>

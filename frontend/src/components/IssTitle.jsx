@@ -6,7 +6,8 @@ function IssTitle(props) {
     <div
       id="ISS_title_container"
       style={
-        props.display === "ISS" && (props.displayGallery || props.displayImgotd)!== true 
+        props.display === "ISS" &&
+        (props.displayGallery || props.displayImgotd) !== true
           ? { top: "0", marginTop: "3.5vh", opacity: "1" }
           : { top: "-10%", opacity: "0", transitionDelay: "0ms" }
       }

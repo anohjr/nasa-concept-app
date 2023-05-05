@@ -44,7 +44,6 @@ function MapISS() {
         throw new Error(err);
       }
     }
-    map.scrollZoom.enable();
 
     map.on("load", async () => {
       const geojson = await getLocation();
@@ -52,6 +51,7 @@ function MapISS() {
         type: "geojson",
         data: geojson,
       });
+
       map.addLayer({
         id: "iss",
         type: "symbol",
@@ -59,8 +59,30 @@ function MapISS() {
         size: 0.25,
         layout: {
           "icon-image": "my-custom-icon",
+          "icon-allow-overlap": true,
         },
       });
+      map.on("click", "iss", (e) => {
+        const coordinates = e.features[0].geometry.coordinates.slice();
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+          coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(
+            '<strong>Welcome to  Internationale Space Station </strong><p>Click&nbsp;<a href="https://www.nasa.gov/mission_pages/station/main/index.html" target="_blank" title="Opens in a new window">here&nbsp;</a>for more information about us </p>'
+          )
+
+          .addTo(map);
+      });
+      map.on("mouseenter", "iss", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+
+      map.on("mouseleave", "iss", () => {
+        map.getCanvas().style.cursor = "";
+      });
+
       const updateSource = setInterval(async () => {
         const newgeojson = await getLocation(updateSource);
         map.getSource("iss").setData(newgeojson);

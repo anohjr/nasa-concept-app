@@ -71,14 +71,17 @@ function ImageOfTheDay(props) {
       const date = new Date();
       date.setDate(date.getDate() - i);
       // const month = monthNames[date.getMonth()];  --> format string
-      let verifyZero;
-      if (date.getMonth() + 1 < 10) verifyZero = "0";
-      if (date.getMonth() + 1 > 10) verifyZero = "";
+      let verifyZeroM;
+      let verifyZeroD;
+      if (date.getMonth() + 1 < 10) verifyZeroM = "0";
+      if (date.getMonth() + 1 > 10) verifyZeroM = "";
+      if (date.getDate() + 1 < 10) verifyZeroD = "0";
+      if (date.getDate() + 1 > 10) verifyZeroD = "";
 
       weekArray.push(
-        `${date.getFullYear()}-${verifyZero}${
+        `${date.getFullYear()}-${verifyZeroM}${
           date.getMonth() + 1
-        }-${date.getDate()}`
+        }-${verifyZeroD}${date.getDate()}`
       );
     }
     return weekArray.map((e) => (

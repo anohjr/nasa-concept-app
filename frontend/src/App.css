@@ -524,6 +524,13 @@ h1{
   
 }
 
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
 /*  --->  ISS PAGE : END  */
 
 /*  --->  SIDEBAR HOME PAGE   */
@@ -1155,3 +1162,31 @@ border: 0.5px solid #FFFFFF;
   font-size: 15px;
 }
 
+.mapboxgl-popup-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.847);
+  border-radius: 0px;
+}
+
+strong {
+  font-family: Karla;
+  font-weight: 600;
+  align-content: center;
+  font-size: 12px;
+}
+
+.mapboxgl-popup-content p{
+  font-size: 12px;
+  font-family: Karla;
+  margin-bottom: 0;
+}
+
+.mapboxgl-popup-content a{
+  font-family: Karla;
+  font-weight: 500;
+}

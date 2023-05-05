@@ -138,6 +138,7 @@ function App() {
         displayGallery={displayGallery}
         displayImgotd={displayImgotd}
       />
+
       <ImgOtdButton
         displayImgotd={displayImgotd}
         setDisplay={setDisplayImgotd}

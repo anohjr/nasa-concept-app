@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import ImagePreview from "./ImagePreview";
 
-// eslint-disable-next-line react/prop-types
 export default function ImageGrid({
   setImage,
   setVisible,

@@ -17,7 +17,7 @@
       }
 
 .scrollbox-inner::-webkit-scrollbar{
-    width: 1px;
+    width: 2px;
 } 
       
 .scrollbox-inner::-webkit-scrollbar-thumb {
@@ -97,12 +97,41 @@
 
 #solar_system_title{
   margin-top: 5vh;
-  margin-left: 3vh;
+  margin-left: 4vw;
 }
 
 #solar-sm-container{
   margin-left: 3vh;
   margin-right: 3vh;
+}
+
+/* ARROW SOLAR SYSTEM */
+#solar-arrows-container{
+  display: flex;
+  justify-content: space-between;
+  width: 92vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+#solar-arrows-container div:nth-child(2){
+  display: flex;
+  align-items: flex-end;
+}
+
+#solar-arrow-L, #solar-arrow-R{
+  height: 30px;
+  width: 30px;
+}
+
+.arrow-txt-container{
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.arrow-txt-container p{
+  opacity: 0.6;
 }
 
 .path-sm-off{
@@ -275,6 +304,7 @@
 
 #header_container{
   margin-top: 4vh;
+  margin-left: 4vw;
 }
 
 #imgotd_overflow{
@@ -369,7 +399,7 @@
 #header h1  {
   left: 0;
   margin-top: 2vh;
-  margin-left: 5vw;
+  margin-left: 4vw;
   text-align: left;
   width: 50vw;
 }
