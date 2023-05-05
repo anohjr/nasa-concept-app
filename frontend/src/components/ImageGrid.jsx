@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import ImagePreview from "./ImagePreview";
 
-// eslint-disable-next-line react/prop-types
 export default function ImageGrid({
   setImage,
   setVisible,
@@ -15,7 +14,6 @@ export default function ImageGrid({
   const listInnerRef = useRef();
 
   useEffect(() => {
-    console.info(scrollPosition);
     document.getElementById("galleryImages").scrollTop = scrollPosition;
   }, [visible]);
 

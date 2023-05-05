@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-extraneous-dependencies */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 // --> Components
@@ -28,13 +28,50 @@ function App() {
   const [matches, setMatches] = useState(
     window.matchMedia("(min-width: 431px)").matches
   );
-  console.log("matches :", matches);
+
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 431px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
 
   return (
     <>
       <div id="app_overflow">
-        <SwitchTransition>
-          <CSSTransition key={page} timeout={350} classNames="page">
+        {matches && (
+          <SwitchTransition>
+            <CSSTransition key={page} timeout={350} classNames="page">
+              {
+                {
+                  ISS: (
+                    <Iss
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                    />
+                  ),
+                  SolarSystem: (
+                    <SolarSystem
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                      matches={matches}
+                      setMatches={setMatches}
+                    />
+                  ),
+                  Home: (
+                    <Home
+                      displayGallery={displayGallery}
+                      displayImgotd={displayImgotd}
+                      matches={matches}
+                    />
+                  ),
+                }[page]
+              }
+            </CSSTransition>
+          </SwitchTransition>
+        )}
+        {!matches && (
+          <>
+            {" "}
             {
               {
                 ISS: (
@@ -47,22 +84,32 @@ function App() {
                   <SolarSystem
                     displayGallery={displayGallery}
                     displayImgotd={displayImgotd}
+                    matches={matches}
+                    setMatches={setMatches}
                   />
                 ),
-                Home: <Home displayGallery={displayGallery} />,
+                Home: (
+                  <Home
+                    displayGallery={displayGallery}
+                    displayImgotd={displayImgotd}
+                    matches={matches}
+                  />
+                ),
               }[page]
             }
-          </CSSTransition>
-        </SwitchTransition>
+          </>
+        )}
         <Gallery
           display={displayGallery}
           setDisplay={setDisplayGallery}
           setPopup={setPopup}
+          matches={matches}
         />
         <ImageOfTheDay
           displayImgotd={displayImgotd}
           setDisplayImgotd={setDisplayImgotd}
           setPopup={setPopup}
+          matches={matches}
         />
         <NavBar
           loadPage={setPage}
@@ -73,14 +120,19 @@ function App() {
           currentPopup={popup}
           matches={matches}
           setMatches={setMatches}
+          setDisplayImgotd={setDisplayImgotd}
         />
       </div>
-      <LogoNasa
-        displayGallery={displayGallery}
-        displayImgotd={displayImgotd}
-        popup={popup}
-        matches={matches}
-      />
+
+      {matches && (
+        <LogoNasa
+          displayGallery={displayGallery}
+          displayImgotd={displayImgotd}
+          popup={popup}
+          matches={matches}
+        />
+      )}
+
       <IssTitle
         display={page}
         displayGallery={displayGallery}

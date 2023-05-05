@@ -5,8 +5,8 @@ function IssLogoOff(props) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      width="37"
-      height="37"
+      width="35"
+      height="35"
       x="0"
       y="0"
       viewBox="0 0 64 64"

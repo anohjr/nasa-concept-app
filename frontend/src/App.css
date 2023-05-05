@@ -67,7 +67,7 @@ h1{
 #nasa_logo_container{
   position: absolute;
   top: 0;
-  margin-top: 2.5%;
+  margin-top: 2.5vh;
   margin-left: 3%;
   color: white;
   display: flex;
@@ -196,11 +196,13 @@ h1{
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.7);
   transition-duration: 700ms;
+  z-index: 2;
 }
 
 /* GALLERY : CLOSE BUTTON */
 
 .close_button{
+  z-index: 1;
   position: absolute;
   width: 3rem;
   background-color: transparent;
@@ -266,6 +268,10 @@ h1{
    padding-left: 1rem;
 }
 
+#searchBar:focus {
+  outline: none;
+}
+
 .searchBar {
   display: flex;
   flex-direction: column;
@@ -289,11 +295,12 @@ h1{
   font-size: medium;    
   font-weight: 300;
   cursor: pointer;
+  margin-bottom: 0.2rem;
 }
 
 #filters button:hover {
   color: rgba(255, 255, 255, 0.8);
-  scale: 1.02;
+  scale: 1.05;
   transition-duration: 300ms;
 }
 
@@ -303,27 +310,48 @@ h1{
   width: 60vw;
   margin: auto;
   display: grid;
-  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
-  height: 75vh;
-  overflow: auto;
-
+  column-gap: 1rem;
+  row-gap: 1rem;
+  height: fit-content;
+  overflow-y: auto;
+  max-height: 70vh;
+  scrollbar-color: white black;
+  scrollbar-width: thin;
 }
+
+#galleryImages::-webkit-scrollbar{
+  width: 4px;
+} 
+
+#galleryImages::-webkit-scrollbar-thumb {
+  background-color: white;
+} 
 /* GALLERY GRID : IMAGE PREVIEW  */
+
+
 .imagePreviewContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1;
- width: 100%;
+  width: 97.5%;
+  cursor: pointer;
+
+
+}
+.imagePreviewContainer:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
 }
 
 .imagePreviewContainer img {  
+  border-radius: 0.2rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 
 /* IMAGE SWIPER */
 
@@ -338,7 +366,7 @@ h1{
   top: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
 
 }
 
@@ -352,31 +380,38 @@ h1{
 }
 
 #swiperButtonNext {
-  position: absolute;
+  position: relative;
   background-color: transparent;
-  border: none;
-  bottom: 50vh;
-  right:10vw;
+  opacity: 0.8;
+  border: none;  
+}
+#swiperButtonNext:disabled {
+  opacity: 0.3;
 }
 
-#swiperButtonPrevious {
-  position: absolute;
+
+#swiperButtonPrevious {  
   background-color: transparent;
-  border: none;
-  bottom: 50vh;
-  left:10vw;
+  border: none; 
+  opacity: 0.8;
+}
+#swiperButtonPrevious:disabled {
+  opacity: 0.3;
 }
 
 .imageDetailBody {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 80%; 
+  width: 95vw;
+  height: 70vh;
+  margin-top: 10vh;
 }
 
-.imageDetailBody img{
-  height: 80%;
+.imageDetailBody img {
+ object-fit: scale-down;
 }
+
 
 .imageDetailFooter {
   display: flex;
@@ -474,6 +509,10 @@ h1{
   transition-delay: 350ms;
 }
 
+#iss_title{
+  text-align: end;
+}
+
 #ISS_title_text{
   font-family: Karla;
   font-size: medium;
@@ -485,22 +524,28 @@ h1{
   
 }
 
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+
 /*  --->  ISS PAGE : END  */
 
 /*  --->  SIDEBAR HOME PAGE   */
 
-#scrollbox-inner::-webkit-scrollbar{
-  width: 5px;
+.scrollbox-inner::-webkit-scrollbar{
+  width: 4px;
 } 
 
-#scrollbox-inner::-webkit-scrollbar-thumb {
+.scrollbox-inner::-webkit-scrollbar-thumb {
   background-color: white;
-  border-radius: 15px;
 } 
-#scrollbox-inner{
-  width: 30vh; 
-  height: 50vh;
-  /* background-color: gold; */
+
+.scrollbox-inner{
+  width: 40vh; 
+  height: 70vh;
   color: white;
   display: flex;
   align-items: flex-start;
@@ -509,26 +554,32 @@ h1{
   text-align:left;
   top:0;
   overflow: scroll;
-  padding: 20px 10px 0 20px;
-  margin-top:0vh;
-  margin-right: 0vh;
-  padding-bottom: 2vh;
+  margin-top:1vh;
+  padding-bottom: 0vh;
 }
 
  #scrollbox{
+  position: relative;
   display: flex;
   justify-content: flex-end;
+  transition: 500ms;
 } 
 
 #article{
   display:flex;
-  border : 2px solid #4E545D;
   flex-direction: column;
 }
 
+#article-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  background-color: rgba(217, 217, 217, 0.2);
+  cursor: pointer;
+}
+
 #sidebar-title{
-  /* background-color: blue; */
-  padding-bottom: 3vh;
+  padding-bottom: 4vh;
   text-align: end;
   color: white;
   top:0;
@@ -536,19 +587,41 @@ h1{
   justify-content: flex-end;
   flex-direction: column;
   align-items: flex-end;
-  margin-top:4vh;
-  margin-right: 10vh;
+  margin-top: 5vh;
+  margin-right: 3%;
 }
 
-
-
-#article-content{
-  background-color: #33373E;
-}
-
-.articles_css{
+.img_article{
+  height: 25vh;
   width: 100%;
+  object-fit: cover;
+  transition: 100ms;
+}
 
+#nasaEvent_date{
+  font-family: Karla;
+  font-weight: 200;
+  font-size:large;
+  margin-top: 5px;
+}
+
+.img_article:hover{
+  -webkit-filter: brightness(.6);
+   filter: brightness(.6);
+}
+
+.articles_title{
+  font-size: large;
+  font-weight: 300;
+  padding-right: 7px;
+}
+
+#titleArticles_container {
+border : 5px;
+border-left-style: solid ;
+border-left-color:white;
+padding-bottom: 1px;
+padding-left:8px;
 }
 
 /*  --->  SIDEBAR HOME PAGE - END   */
@@ -624,7 +697,7 @@ h1{
   transition: 350ms;
   /* Animation*/
   animation: MoveUpDown 2s linear infinite;
-  position: absolute;
+ 
 }
 
 /*  --> IMG OTD PAGE COMPONENT  */
@@ -632,7 +705,7 @@ h1{
 #Imageotd_popup{
   font-weight: 200;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   height: 100%;
   width: 100%;
   color: white;
@@ -668,11 +741,25 @@ h1{
   position: absolute;
   top:0;
   height: 100vh;
-  width: 100%;
-  margin-left: 30%;
-  width: 56%;
+  margin-left: 30vw;
+  width: 57vw;
   overflow: scroll;
+  margin-right: 10%;
 }
+
+#imgotd_overflow::-webkit-scrollbar{
+  width: 10px;
+} 
+
+#imgotd_overflow::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-radius: 15px;
+} 
+
+#imgotd_overflow::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
 
 #imgotd_body{
   position: relative;
@@ -687,6 +774,7 @@ h1{
   padding-bottom: 40px;
   transition-duration: 900ms;
   cursor: default;
+  width: 56vw;
 }
 
 /*#IMG_otd{
@@ -1074,3 +1162,31 @@ border: 0.5px solid #FFFFFF;
   font-size: 15px;
 }
 
+.mapboxgl-popup-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 150px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.847);
+  border-radius: 0px;
+}
+
+strong {
+  font-family: Karla;
+  font-weight: 600;
+  align-content: center;
+  font-size: 12px;
+}
+
+.mapboxgl-popup-content p{
+  font-size: 12px;
+  font-family: Karla;
+  margin-bottom: 0;
+}
+
+.mapboxgl-popup-content a{
+  font-family: Karla;
+  font-weight: 500;
+}
