@@ -6,13 +6,14 @@ import GalleryBody from "../components/GalleryBody";
 // eslint-disable-next-line react/prop-types
 function Gallery({ setDisplay, display }) {
   const [myData, setMyData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("earth");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [pageNum, setPageNum] = useState(1);
 
   useEffect(() => {
     fetch(
-      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=12&page=${pageNum}`
+      `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=12&page=${pageNum}`,
+      { hearders: { "Access-Control-Allow-Origin": "*" } }
     )
       .then((response) => response.json())
       .then((data) => {
