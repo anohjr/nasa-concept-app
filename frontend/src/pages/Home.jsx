@@ -14,13 +14,6 @@ function Home(props) {
       />
       <div id="credits-dew-crew">
         <a
-          href="https://www.linkedin.com/in/saverio-cutolo/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Saverio Cutolo
-        </a>
-        <a
           href="https://www.linkedin.com/in/naomi-rose-0818ab167/"
           target="_blank"
           rel="noreferrer"
@@ -33,6 +26,13 @@ function Home(props) {
           rel="noreferrer"
         >
           Jean-Marc Millet
+        </a>
+        <a
+          href="https://www.linkedin.com/in/saverio-cutolo/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Saverio Cutolo
         </a>
         <a
           href="https://www.linkedin.com/in/etienne-chamarier-243843ba/"
