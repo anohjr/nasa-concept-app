@@ -119,7 +119,7 @@ h1{
   z-index: 3;
   position: absolute;
   bottom: -20%;
-  margin-bottom: 3%;
+  margin-bottom: 6vh;
   right: 10%;
   left: 10%;
   color: rgb(255, 255, 255);
@@ -256,7 +256,7 @@ h1{
 
 #searchBar{
   width: 50%;
-  height: 2rem;
+  height: 1.8rem;
   margin-top: 5%;
   background: rgba(255, 255, 255, 0.3);  
    margin-bottom: 1rem;
@@ -280,13 +280,12 @@ h1{
 
 .searchBar #filters {
   width: 50%;
-  margin: auto;
-
 }
+
 #filters button {
   font-family: Karla;
   width: fit-content;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   background-color: rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.6);  
@@ -295,7 +294,7 @@ h1{
   font-size: medium;    
   font-weight: 300;
   cursor: pointer;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 #filters button:hover {
@@ -311,8 +310,7 @@ h1{
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 1rem;
-  row-gap: 1rem;
+  gap: 0.7rem;
   height: fit-content;
   overflow-y: auto;
   max-height: 70vh;
@@ -335,18 +333,16 @@ h1{
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1;
-  width: 97.5%;
+  width: 100%;
   cursor: pointer;
-
-
 }
+
 .imagePreviewContainer:hover {
-  transform: scale(1.05);
+  transform: scale(1);
   transition: 0.3s;
 }
 
 .imagePreviewContainer img {  
-  border-radius: 0.2rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1190,3 +1186,36 @@ strong {
   font-family: Karla;
   font-weight: 500;
 }
+
+
+/* CREDITS ---> */
+
+#credits-dew-crew{
+margin-left: 30px;
+display: flex;
+gap: 1vw;
+position: absolute;
+bottom: 0;
+font-size: smaller;
+font-weight: 100;
+margin-bottom: 0.5vh;
+transition: 200ms;
+}
+
+a:link, a:visited{
+  text-decoration: none;
+  font-family: Karla;
+  color: rgba(255, 255, 255, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  transition: 300ms;
+}
+
+a:hover{
+  opacity: 1;
+  color: white;
+  border: 0.5px solid white;
+}
+

@@ -37,7 +37,7 @@ function GalleryHeader({
       {!matches && <h1>Gallery</h1>}
       <div className="searchBar">
         <input
-          placeholder="Search here &#128270;"
+          placeholder="Search here"
           type="text"
           name=""
           id="searchBar"
