@@ -129,7 +129,6 @@ function App() {
           displayGallery={displayGallery}
           displayImgotd={displayImgotd}
           popup={popup}
-          matches={matches}
         />
       )}
 
