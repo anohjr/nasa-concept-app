@@ -1,6 +1,7 @@
 /* eslint-disable import/no-duplicates */
 import mapboxgl from "mapbox-gl";
 import { useEffect } from "react";
+import issIcon from "../assets/iss-icone.png";
 
 function MapISS() {
   useEffect(() => {
@@ -11,7 +12,7 @@ function MapISS() {
       zoom: 0.8,
     });
 
-    map.loadImage("src/assets/ISS-icone.png", (error, image) => {
+    map.loadImage(issIcon, (error, image) => {
       if (error) throw error;
       map.addImage("my-custom-icon", image);
     });
