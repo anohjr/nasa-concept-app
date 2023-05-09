@@ -257,15 +257,23 @@ h1{
 #searchBar{
   width: 50%;
   height: 1.8rem;
-  margin-top: 5%;
   background: rgba(255, 255, 255, 0.3);  
-   margin-bottom: 1rem;
    color: aliceblue;
    border: none;
    border-radius: 1rem;
    font-size: medium;
    font-family: Karla;
    padding-left: 1rem;
+}
+
+#loupe-and-searchBar-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5vh;
+  margin-bottom: 1rem;
 }
 
 #searchBar:focus {
@@ -377,6 +385,7 @@ h1{
 }
 
 #swiperButtonNext {
+  padding: 0;
   position: relative;
   background-color: transparent;
   border: none;  
@@ -394,6 +403,7 @@ h1{
 
 
 #swiperButtonPrevious {  
+  padding: 0;
   background-color: transparent;
   border: none; 
   cursor: pointer;
@@ -440,6 +450,7 @@ h1{
 .imageDetailFooter p {
   margin: 0;
   width: 40%;
+  opacity: 0.6;
   text-align: end;
 }
 

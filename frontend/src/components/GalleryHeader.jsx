@@ -2,6 +2,7 @@
 
 import CloseButton from "./CloseButton";
 import FilterButton from "./FilterButton";
+import Loupe from "./Loupe";
 
 function GalleryHeader({
   setGalleryVisible,
@@ -36,14 +37,17 @@ function GalleryHeader({
       )}
       {!matches && <h1>Gallery</h1>}
       <div className="searchBar">
-        <input
-          placeholder="Search here"
-          type="text"
-          name=""
-          id="searchBar"
-          value={searchQuery}
-          onChange={(e) => handleChange(e)}
-        />
+        <div id="loupe-and-searchBar-container">
+          <Loupe />
+          <input
+            placeholder="Search here"
+            type="text"
+            name=""
+            id="searchBar"
+            value={searchQuery}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
         <div id="filters">
           {filterArray.map((e) => {
             return (

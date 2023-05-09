@@ -414,11 +414,13 @@
   align-items: start;
   }
 
+#loupe-and-searchBar-container{
+  justify-content: flex-start;
+}
+
 #searchBar{
   width: 60%;
   height: 1.5rem;
-  margin-bottom: 0.5rem;
-
 }
 
 #searchBar:focus {
@@ -487,16 +489,16 @@
 }
 
 .imageDetailFooter {
-  width: 100%;
+  width: 90vw;
 }
 
 .imageDetailFooter h2 {
- width: 95%;
+  font-weight: 200;
+ width: 100%;
 }
 
 .imageDetailFooter p {
   opacity: 0.5;
+  font-weight: 200;
 }
-
-
 }
