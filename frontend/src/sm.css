@@ -132,6 +132,9 @@
 }
 
 .arrow-txt-container p{
+  font-size: medium;
+  font-weight: 300;
+  margin-top: 5px;
   opacity: 0.6;
 }
 
@@ -217,7 +220,7 @@
 #planet_card_container{
   position: initial;
   width: 100vw;
-  margin-top: 3vh;
+  margin-top: 0;
   margin-left: 4vw;
   margin-right: 4vw;
   width: 92vw;
@@ -233,7 +236,7 @@
 }
 
 #planet_description{
-  width: 70vw;
+  width: 85vw;
   opacity: 0.6;
 }
 
@@ -244,7 +247,7 @@
 }
 
 #distance_number, #mesure_unity{
-  width: 40vw;
+  width: 70vw;
   text-align: end;
   margin-bottom: 5px;
 }
