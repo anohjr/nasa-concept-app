@@ -75,8 +75,9 @@ function ImageOfTheDay(props) {
       let verifyZeroD;
       if (date.getMonth() + 1 < 10) verifyZeroM = "0";
       if (date.getMonth() + 1 > 10) verifyZeroM = "";
-      if (date.getDate() + 1 < 10) verifyZeroD = "0";
+      if (date.getDate() + 1 <= 10) verifyZeroD = "0";
       if (date.getDate() + 1 > 10) verifyZeroD = "";
+      console.log("bug correct :", date.getDate() + 1);
 
       weekArray.push(
         `${date.getFullYear()}-${verifyZeroM}${
