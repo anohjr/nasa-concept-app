@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-plusplus */
@@ -26,8 +27,6 @@ function ImageOfTheDay(props) {
 
   const [imageData, setImageData] = useState(null);
   const [showDate, setShowDate] = useState(todayDateURL);
-
-  console.log(showDate);
   useEffect(() => {
     NasaApi.getImage(afterApiCall, showDate);
   }, [showDate]);
@@ -77,7 +76,6 @@ function ImageOfTheDay(props) {
       if (date.getMonth() + 1 > 10) verifyZeroM = "";
       if (date.getDate() + 1 <= 10) verifyZeroD = "0";
       if (date.getDate() + 1 > 10) verifyZeroD = "";
-      console.log("bug correct :", date.getDate() + 1);
 
       weekArray.push(
         `${date.getFullYear()}-${verifyZeroM}${
@@ -165,7 +163,11 @@ function ImageOfTheDay(props) {
                 </h4>
                 <p id="credits_title">
                   Credit & Copyright :{" "}
-                  {imageData === null ? "" : imageData.copyright}
+                  {imageData === null
+                    ? ""
+                    : imageData.copyright === undefined
+                    ? "unknown"
+                    : imageData.copyright}
                 </p>
               </div>
               <div id="explanation_txt">

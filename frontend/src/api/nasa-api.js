@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 const baseUrl = "https://api.nasa.gov/";
-const apiKey = "Vf9sdT6xCdjGyfgFnrWmuL3scey5OLaPmNFFCMeQ";
+const apiKey = import.meta.env.VITE_APP_IMGOTD_TOKEN;
 // https://api.nasa.gov/planetary/apod?api_key=Vf9sdT6xCdjGyfgFnrWmuL3scey5OLaPmNFFCMeQ&date=2023-03-01
 
 function getImage(callBack, showDate) {
